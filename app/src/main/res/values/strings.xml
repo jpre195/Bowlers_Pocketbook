@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Bowler\'s Pocketbook</string>
+    <string-array name="events_array">
+        <item>Practice</item>
+        <item>League</item>
+        <item>Tournament</item>
+    </string-array>
 </resources>
