@@ -17,11 +17,11 @@
         android:layout_marginRight="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.532"
-        app:layout_constraintStart_toEndOf="@+id/eventTypeText"
+        app:layout_constraintStart_toEndOf="@+id/eventTypeTextView"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/eventTypeText"
+        android:id="@+id/eventTypeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -43,7 +43,7 @@
         android:layout_marginTop="56dp"
         android:text="Ball used:"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/eventTypeText" />
+        app:layout_constraintTop_toBottomOf="@+id/eventTypeTextView" />
 
     <EditText
         android:id="@+id/ballUsedEditText"
@@ -84,4 +84,53 @@
         app:layout_constraintHorizontal_bias="0.756"
         app:layout_constraintStart_toEndOf="@+id/scoreTextView"
         app:layout_constraintTop_toBottomOf="@+id/ballUsedEditText" />
+
+    <TextView
+        android:id="@+id/gameNumberTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="88dp"
+        android:text="Game number:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scoreTextView" />
+
+    <EditText
+        android:id="@+id/gameNumberEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:ems="10"
+        android:hint="1"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.758"
+        app:layout_constraintStart_toEndOf="@+id/gameNumberTextView"
+        app:layout_constraintTop_toBottomOf="@+id/scoreEditText" />
+
+    <ListView
+        android:id="@+id/scoresListView"
+        android:layout_width="402dp"
+        android:layout_height="212dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logScoresBtn" />
+
+    <Button
+        android:id="@+id/logScoresBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:text="Log Score"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gameNumberEditText" />
 </androidx.constraintlayout.widget.ConstraintLayout>
