@@ -66,7 +66,9 @@ public class LogScoresActivity extends AppCompatActivity implements AdapterView.
                 int score = Integer.parseInt(scoreEditText.getText().toString());
                 int game = Integer.parseInt(gameEditText.getText().toString());
 
-                if (!eventType.isEmpty() & !ball.isEmpty() & scoreEditText.getText().toString().isEmpty() & gameEditText.getText().toString().isEmpty()) {
+                if (!eventType.isEmpty() & !ball.isEmpty() & !scoreEditText.getText().toString().isEmpty() & !gameEditText.getText().toString().isEmpty()) {
+                    databaseHelper.addGame(eventType, ball, score, game);
+
                     ballEditText.setText("");
                     scoreEditText.setText("");
                     gameEditText.setText("");
