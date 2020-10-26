@@ -26,7 +26,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+        String deleteTable = "drop table if exists " + TABLE_NAME;
+        db.execSQL(deleteTable);
     }
 
     public boolean addGame(String event, String ball, int score, int game) {
