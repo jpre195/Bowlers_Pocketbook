@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LogScoresActivity"></activity>
+        <activity
+            android:name=".AnalyzeScoresActivity"
+            android:label="@string/title_activity_analyze_scores"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".LogScoresActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
