@@ -10,7 +10,7 @@
         android:id="@+id/gridLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:rowCount="4"
+        app:rowCount="6"
         app:columnCount="2"
         app:orientation="horizontal">
 
@@ -92,28 +92,26 @@
             android:inputType="number"
             app:layout_column="1"
             app:layout_row="3" />
+
+        <Button
+            android:id="@+id/logScoresBtn"
+            android:layout_width="96dp"
+            android:layout_height="wrap_content"
+            android:text="Log Score"
+            app:layout_column="0"
+            app:layout_columnSpan="2"
+            app:layout_gravity="center"
+            app:layout_row="4" />
+
+        <ListView
+            android:id="@+id/scoresListView"
+            android:layout_width="402dp"
+            android:layout_height="212dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="8dp"
+            app:layout_column="0"
+            app:layout_columnSpan="2"
+            app:layout_row="5"/>
     </androidx.gridlayout.widget.GridLayout>
-
-    <ListView
-        android:id="@+id/scoresListView"
-        android:layout_width="402dp"
-        android:layout_height="212dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logScoresBtn" />
-
-    <Button
-        android:id="@+id/logScoresBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="200dp"
-        android:text="Log Score"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
