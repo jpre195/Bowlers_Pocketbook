@@ -7,6 +7,7 @@ import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.View;
@@ -17,13 +18,21 @@ public class AnalyzeScoresActivity extends AppCompatActivity {
     RecyclerView.Adapter programAdapter;
     RecyclerView.LayoutManager layoutManager;
 
-    //TODO add a test scores list, event type list, and game number list (at 9:33 in video)
-    String[] scoresList;
+    int[] scoresList = {290, 279, 256};
+    String[] eventTypeList = {"League", "League", "League"};
+    int[] gameList = {1, 2, 3};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_analyze_scores);
+
+        recyclerView = findViewById(R.id.scoresRV);
+        recyclerView.setHasFixedSize(true);
+        layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+
+        //TODO Continue in video at 10:40
 
     }
 }
