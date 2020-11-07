@@ -32,7 +32,5 @@ public class AnalyzeScoresActivity extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        //TODO Continue in video at 10:40
-
     }
 }
