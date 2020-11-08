@@ -49,19 +49,21 @@ public class AnalyzeScoresAdapter extends RecyclerView.Adapter<AnalyzeScoresAdap
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.single_score, parent, false);
         ViewHolder viewHolder = new ViewHolder(view);
-
-        //TODO Continue with video at 13:22
         return viewHolder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull AnalyzeScoresAdapter.ViewHolder holder, int position) {
+        holder.ballImageView.setImageResource(ballImages[position]);
+        holder.eventTextView.setText(eventTypeList[position]);
+        holder.gameTextView.setText(gameList[position]);
+        holder.scoreTextView.setText(scoresList[position]);
 
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return scoresList.length;
     }
 
 }
