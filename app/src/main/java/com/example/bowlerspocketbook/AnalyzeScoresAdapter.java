@@ -55,9 +55,9 @@ public class AnalyzeScoresAdapter extends RecyclerView.Adapter<AnalyzeScoresAdap
     @Override
     public void onBindViewHolder(@NonNull AnalyzeScoresAdapter.ViewHolder holder, int position) {
         holder.ballImageView.setImageResource(ballImages[position]);
-        holder.eventTextView.setText(eventTypeList[position]);
-        holder.gameTextView.setText(gameList[position]);
-        holder.scoreTextView.setText(scoresList[position]);
+        holder.eventTextView.setText("Event: " + eventTypeList[position]);
+        holder.gameTextView.setText("Game: " + Integer.toString(gameList[position]));
+        holder.scoreTextView.setText(Integer.toString(scoresList[position]));
 
     }
 

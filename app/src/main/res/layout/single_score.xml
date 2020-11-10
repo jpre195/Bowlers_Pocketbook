@@ -8,7 +8,9 @@
     <ImageView
         android:id="@+id/ballImageView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
         tools:srcCompat="@tools:sample/avatars"
         android:layout_margin="10dp"/>
 
@@ -21,7 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:text="Game"
-            android:textSize="20sp"
+            android:textSize="14sp"
             android:id="@+id/gameExampleTextView"/>
 
         <TextView
@@ -37,7 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:text="Score"
-        android:textSize="20sp"
+        android:textSize="28sp"
         android:layout_marginLeft="150dp"
         android:layout_gravity="center"
         android:id="@+id/scoreExampleTextView"/>
