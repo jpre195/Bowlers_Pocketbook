@@ -10,13 +10,15 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
+
 public class AnalyzeScoresAdapter extends RecyclerView.Adapter<AnalyzeScoresAdapter.ViewHolder> {
 
     Context context;
-    String[] eventTypeList;
-    int[] ballImages;
-    int[] gameList;
-    int[] scoresList;
+    ArrayList<String> eventTypeList;
+    ArrayList<Integer> ballImages;
+    ArrayList<Integer> gameList;
+    ArrayList<Integer> scoresList;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
@@ -35,7 +37,7 @@ public class AnalyzeScoresAdapter extends RecyclerView.Adapter<AnalyzeScoresAdap
         }
     }
 
-    public AnalyzeScoresAdapter(Context context, String[] eventTypeList, int[] ballImages, int[] gameList, int[] scoresList) {
+    public AnalyzeScoresAdapter(Context context, ArrayList<String> eventTypeList, ArrayList<Integer> ballImages, ArrayList<Integer> gameList, ArrayList<Integer> scoresList) {
         this.context = context;
         this.eventTypeList = eventTypeList;
         this.ballImages = ballImages;
@@ -53,17 +55,17 @@ public class AnalyzeScoresAdapter extends RecyclerView.Adapter<AnalyzeScoresAdap
     }
 
     @Override
-    public void onBindViewHolder(@NonNull AnalyzeScoresAdapter.ViewHolder holder, int position) {
-        holder.ballImageView.setImageResource(ballImages[position]);
-        holder.eventTextView.setText("Event: " + eventTypeList[position]);
-        holder.gameTextView.setText("Game: " + Integer.toString(gameList[position]));
-        holder.scoreTextView.setText(Integer.toString(scoresList[position]));
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        holder.ballImageView.setImageResource(ballImages.get(position));
+        holder.eventTextView.setText("Event: " + eventTypeList.get(position));
+        holder.gameTextView.setText("Game: " + gameList.get(position));
+        holder.scoreTextView.setText("" + scoresList.get(position));
 
     }
 
     @Override
     public int getItemCount() {
-        return scoresList.length;
+        return scoresList.size();
     }
 
 }

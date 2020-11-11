@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp">
 
     <ImageView
         android:id="@+id/ballImageView"
@@ -17,6 +18,7 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
         android:orientation="vertical">
 
         <TextView
@@ -41,7 +43,6 @@
         android:text="Score"
         android:textSize="28sp"
         android:layout_marginLeft="150dp"
-        android:layout_gravity="center"
         android:id="@+id/scoreExampleTextView"/>
 
 </LinearLayout>
