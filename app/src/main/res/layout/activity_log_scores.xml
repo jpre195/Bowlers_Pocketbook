@@ -10,7 +10,7 @@
         android:id="@+id/gridLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:rowCount="6"
+        app:rowCount="5"
         app:columnCount="2"
         app:orientation="horizontal">
 
@@ -22,7 +22,9 @@
             android:singleLine="false"
             android:text="Please select \n the event type:"
             android:textSize="14sp"
-            android:layout_margin="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="30dp"
+            android:layout_marginLeft="10dp"
             app:layout_column="0"
             app:layout_row="0" />
 
@@ -30,7 +32,8 @@
             android:id="@+id/eventTypeSpinner"
             android:layout_width="180dp"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="30dp"
             app:layout_column="1"
             app:layout_row="0" />
 
@@ -38,7 +41,8 @@
             android:id="@+id/ballUsedText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="30dp"
             android:text="Ball used:"
             app:layout_column="0"
             app:layout_row="1" />
@@ -47,7 +51,8 @@
             android:id="@+id/ballUsedEditText"
             android:layout_width="180dp"
             android:layout_height="45dp"
-            android:layout_margin="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="30dp"
             android:ems="10"
             android:inputType="text"
             app:layout_column="1"
@@ -103,15 +108,6 @@
             app:layout_gravity="center"
             app:layout_row="4" />
 
-        <ListView
-            android:id="@+id/scoresListView"
-            android:layout_width="402dp"
-            android:layout_height="212dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="8dp"
-            app:layout_column="0"
-            app:layout_columnSpan="2"
-            app:layout_row="5"/>
     </androidx.gridlayout.widget.GridLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
