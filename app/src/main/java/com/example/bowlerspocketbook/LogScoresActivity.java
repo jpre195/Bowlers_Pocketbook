@@ -21,7 +21,7 @@ public class LogScoresActivity extends AppCompatActivity implements AdapterView.
     EditText ballEditText;
     EditText scoreEditText;
     EditText gameEditText;
-    ListView scoreListView;
+//    ListView scoreListView;
     Button logScoresBtn;
 
     DatabaseHelper databaseHelper;
@@ -42,7 +42,7 @@ public class LogScoresActivity extends AppCompatActivity implements AdapterView.
         ballEditText = findViewById(R.id.ballUsedEditText);
         scoreEditText = findViewById(R.id.scoreEditText);
         gameEditText = findViewById(R.id.gameNumberEditText);
-        scoreListView = findViewById(R.id.scoresListView);
+//        scoreListView = findViewById(R.id.scoresListView);
         logScoresBtn = findViewById(R.id.logScoresBtn);
 
         //Initialize DatabaseHelper
@@ -54,8 +54,8 @@ public class LogScoresActivity extends AppCompatActivity implements AdapterView.
         //Initialize ArrayAdapter
         arrayAdapter = new ArrayAdapter(LogScoresActivity.this, android.R.layout.simple_list_item_1, arrayList);
 
-        //Set arrayAdapter to ListView
-        scoreListView.setAdapter(arrayAdapter);
+//        //Set arrayAdapter to ListView
+//        scoreListView.setAdapter(arrayAdapter);
 
         logScoresBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,13 +76,13 @@ public class LogScoresActivity extends AppCompatActivity implements AdapterView.
                     //Display Success message
                     Toast.makeText(getApplicationContext(), "Score logged...", Toast.LENGTH_SHORT).show();
 
-                    arrayList.clear();
-                    arrayList.addAll(databaseHelper.getAllScores());
-
-                    //Refresh ListView
-                    arrayAdapter.notifyDataSetChanged();
-                    scoreListView.invalidateViews();
-                    scoreListView.refreshDrawableState();
+//                    arrayList.clear();
+//                    arrayList.addAll(databaseHelper.getAllScores());
+//
+//                    //Refresh ListView
+//                    arrayAdapter.notifyDataSetChanged();
+//                    scoreListView.invalidateViews();
+//                    scoreListView.refreshDrawableState();
                 }
             }
         });
