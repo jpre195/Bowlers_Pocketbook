@@ -6,113 +6,124 @@
     android:layout_height="match_parent"
     tools:context=".LogScoresActivity">
 
-    <androidx.gridlayout.widget.GridLayout
-        android:id="@+id/gridLayout"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:rowCount="5"
-        app:columnCount="2"
-        app:orientation="horizontal">
+        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/eventTypeTextView"
-            android:layout_width="wrap_content"
+        <androidx.gridlayout.widget.GridLayout
+            android:id="@+id/gridLayout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:lines="2"
-            android:singleLine="false"
-            android:text="Please select \n the event type:"
-            android:textSize="14sp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="30dp"
-            android:layout_marginLeft="10dp"
-            app:layout_column="0"
-            app:layout_row="0" />
+            app:columnCount="2"
+            app:orientation="horizontal"
+            app:rowCount="4">
 
-        <Spinner
-            android:id="@+id/eventTypeSpinner"
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="30dp"
-            android:layout_marginLeft="10dp"
-            app:layout_column="1"
-            app:layout_row="0" />
+            <TextView
+                android:id="@+id/eventTypeTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="30dp"
+                android:lines="2"
+                android:singleLine="false"
+                android:text="Please select \n the event type:"
+                android:textSize="14sp"
+                app:layout_column="0"
+                app:layout_row="0" />
 
-        <TextView
-            android:id="@+id/ballUsedText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginBottom="30dp"
-            android:text="Ball used:"
-            app:layout_column="0"
-            app:layout_row="1" />
+            <Spinner
+                android:id="@+id/eventTypeSpinner"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="30dp"
+                app:layout_column="1"
+                app:layout_row="0" />
 
-        <EditText
-            android:id="@+id/ballUsedEditText"
-            android:layout_width="180dp"
-            android:layout_height="45dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginBottom="30dp"
-            android:ems="10"
-            android:inputType="text"
-            app:layout_column="1"
-            app:layout_row="1" />
+            <TextView
+                android:id="@+id/ballUsedText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="30dp"
+                android:text="Ball used:"
+                app:layout_column="0"
+                app:layout_row="1" />
 
-        <TextView
-            android:id="@+id/scoreTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginBottom="30dp"
-            android:text="Record Score:"
-            app:layout_column="0"
-            app:layout_row="2" />
+            <EditText
+                android:id="@+id/ballUsedEditText"
+                android:layout_width="180dp"
+                android:layout_height="45dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="30dp"
+                android:ems="10"
+                android:inputType="text"
+                app:layout_column="1"
+                app:layout_row="1" />
 
-        <EditText
-            android:id="@+id/scoreEditText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginBottom="30dp"
-            android:ems="10"
-            android:hint="0"
-            android:inputType="number"
-            app:layout_column="1"
-            app:layout_row="2" />
+            <TextView
+                android:id="@+id/scoreTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="30dp"
+                android:text="Record Score:"
+                app:layout_column="0"
+                app:layout_row="2" />
 
-        <TextView
-            android:id="@+id/gameNumberTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginBottom="30dp"
-            android:text="Game number:"
-            app:layout_column="0"
-            app:layout_row="3" />
+            <EditText
+                android:id="@+id/scoreEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="30dp"
+                android:ems="10"
+                android:hint="0"
+                android:inputType="number"
+                app:layout_column="1"
+                app:layout_row="2" />
 
-        <EditText
-            android:id="@+id/gameNumberEditText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginBottom="30dp"
-            android:ems="10"
-            android:hint="1"
-            android:inputType="number"
-            app:layout_column="1"
-            app:layout_row="3" />
+            <TextView
+                android:id="@+id/gameNumberTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="30dp"
+                android:text="Game number:"
+                app:layout_column="0"
+                app:layout_row="3" />
+
+            <EditText
+                android:id="@+id/gameNumberEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="30dp"
+                android:ems="10"
+                android:hint="1"
+                android:inputType="number"
+                app:layout_column="1"
+                app:layout_row="3" />
+
+        </androidx.gridlayout.widget.GridLayout>
 
         <Button
             android:id="@+id/logScoresBtn"
-            android:layout_width="96dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Log Score"
-            app:layout_column="0"
-            app:layout_columnSpan="2"
-            app:layout_gravity="center"
-            app:layout_row="4" />
+            android:layout_gravity="center"
+            android:layout_margin="64dp"/>
 
-    </androidx.gridlayout.widget.GridLayout>
+        <Button
+            android:id="@+id/analyzeScoresBtn2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Analyze Scores"
+            android:layout_gravity="center" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
