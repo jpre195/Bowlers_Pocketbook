@@ -47,7 +47,7 @@ public class AnalyzeScoresActivity extends AppCompatActivity {
 
         for (int i = 0; i < numScores; i++) {
             eventTypeList.add((String) arrayList.get(4 * i));
-            ballImages.add(R.drawable.omega_crux);
+            ballImages.add(R.drawable.nuclear_cell);
             scoresList.add(Integer.parseInt((String) arrayList.get(4 * i + 2)));
             gameList.add(Integer.parseInt((String) arrayList.get(4 * i + 3)));
         }
