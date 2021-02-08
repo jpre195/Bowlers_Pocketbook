@@ -2,6 +2,7 @@ package com.example.bowlerspocketbook;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -23,6 +24,7 @@ public class LogScoresActivity extends AppCompatActivity implements AdapterView.
     EditText gameEditText;
 //    ListView scoreListView;
     Button logScoresBtn;
+    Button analyzeScoresBtn;
 
     DatabaseHelper databaseHelper;
     ArrayList arrayList;
@@ -44,6 +46,7 @@ public class LogScoresActivity extends AppCompatActivity implements AdapterView.
         gameEditText = findViewById(R.id.gameNumberEditText);
 //        scoreListView = findViewById(R.id.scoresListView);
         logScoresBtn = findViewById(R.id.logScoresBtn);
+        analyzeScoresBtn = findViewById(R.id.analyzeScoresBtn2);
 
         //Initialize DatabaseHelper
         databaseHelper = new DatabaseHelper(LogScoresActivity.this);
@@ -86,6 +89,18 @@ public class LogScoresActivity extends AppCompatActivity implements AdapterView.
                 }
             }
         });
+
+        analyzeScoresBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openAnalyzeScoresActivity();
+            }
+        });
+    }
+
+    public void openAnalyzeScoresActivity() {
+        Intent intent = new Intent(this, AnalyzeScoresActivity.class);
+        startActivity(intent);
     }
 
     @Override
