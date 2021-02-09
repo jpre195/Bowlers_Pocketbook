@@ -19,6 +19,7 @@ public class LogScoresActivity extends AppCompatActivity implements AdapterView.
 
     //Initialize variables
     Spinner spinner;
+    Spinner ballUsedSpinner;
     EditText ballEditText;
     EditText scoreEditText;
     EditText gameEditText;
@@ -40,6 +41,12 @@ public class LogScoresActivity extends AppCompatActivity implements AdapterView.
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
+
+        ballUsedSpinner = findViewById(R.id.ballUsedSpinner);
+//        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.events_array, android.R.layout.simple_spinner_item);
+//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ballUsedSpinner.setAdapter(adapter);
+        ballUsedSpinner.setOnItemSelectedListener(this);
 
         ballEditText = findViewById(R.id.ballUsedEditText);
         scoreEditText = findViewById(R.id.scoreEditText);
