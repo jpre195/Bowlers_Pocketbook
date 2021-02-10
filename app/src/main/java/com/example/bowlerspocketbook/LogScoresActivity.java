@@ -1,7 +1,5 @@
 package com.example.bowlerspocketbook;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -9,9 +7,10 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 
@@ -42,6 +41,10 @@ public class LogScoresActivity extends AppCompatActivity implements AdapterView.
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
 
+        //TODO: Read in BowlingBallProcessed.csv file. See YouTube video
+        readBowlingBallData();
+        
+        //getResources().openRawResource(R.raw.BowlingBallsProcessed);
         ballUsedSpinner = findViewById(R.id.ballUsedSpinner);
 //        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.events_array, android.R.layout.simple_spinner_item);
 //        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -103,6 +106,10 @@ public class LogScoresActivity extends AppCompatActivity implements AdapterView.
                 openAnalyzeScoresActivity();
             }
         });
+    }
+
+    private void readBowlingBallData() {
+        BowlingBall currBall;
     }
 
     public void openAnalyzeScoresActivity() {
