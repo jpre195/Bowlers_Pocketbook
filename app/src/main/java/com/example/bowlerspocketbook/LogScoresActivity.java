@@ -43,6 +43,8 @@ public class LogScoresActivity extends AppCompatActivity implements AdapterView.
 
         //TODO: Read in BowlingBallProcessed.csv file. See YouTube video
         readBowlingBallData();
+
+        List<BowlingBall> bowlingBalls = new ArrayList<>();
         
         //getResources().openRawResource(R.raw.BowlingBallsProcessed);
         ballUsedSpinner = findViewById(R.id.ballUsedSpinner);
