@@ -44,7 +44,7 @@ public class LogScoresActivity extends AppCompatActivity implements AdapterView.
         //TODO: Read in BowlingBallProcessed.csv file. See YouTube video
         readBowlingBallData();
 
-        List<BowlingBall> bowlingBalls = new ArrayList<>();
+        //List<BowlingBall> bowlingBalls = new ArrayList<>();
         
         //getResources().openRawResource(R.raw.BowlingBallsProcessed);
         ballUsedSpinner = findViewById(R.id.ballUsedSpinner);
@@ -111,7 +111,32 @@ public class LogScoresActivity extends AppCompatActivity implements AdapterView.
     }
 
     private void readBowlingBallData() {
-        BowlingBall currBall;
+
+        InputStream is = getResources().openRawResource(R.raw.bowling_balls_processed);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
+
+        String line = "";
+
+        try {
+            while((line = reader.readLine()) != null) {
+
+                String[] tokens = line.split(",");
+
+                //Read the data
+                BowlingBall currBall = new BowlingBall();
+                currBall.setBallName(tokens[0]);
+                currBall.setBrand(tokens[1]);
+                currBall.setCore(tokens[2]);
+                currBall.setCoverstock(tokens[3]);
+                currBall.setDiff(tokens[4]);
+                currBall.setRg(tokens[5]);
+                currBall.setHook(tokens[6]);
+
+            } catch(IOException e) {
+                Log.wtf("LogScoresActivity", "Error reading data file on line " + line, e);
+                e.printStackTrace();
+            }
+        }
     }
 
     public void openAnalyzeScoresActivity() {
