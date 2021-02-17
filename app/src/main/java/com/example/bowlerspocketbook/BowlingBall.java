@@ -65,6 +65,10 @@ public class BowlingBall {
     public void setHook(float hook) {
         this.hook = hook;
     }
+
+    public java.lang.String toString() {
+        return brand + " " + ballName;
+    }
 }
 
 

@@ -9,17 +9,22 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.io.*;
+import java.nio.charset.Charset;
 
 public class LogScoresActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     //Initialize variables
     Spinner spinner;
     Spinner ballUsedSpinner;
-    EditText ballEditText;
+//    EditText ballEditText;
     EditText scoreEditText;
     EditText gameEditText;
 //    ListView scoreListView;
@@ -29,6 +34,8 @@ public class LogScoresActivity extends AppCompatActivity implements AdapterView.
     DatabaseHelper databaseHelper;
     ArrayList arrayList;
     ArrayAdapter arrayAdapter;
+
+    List<BowlingBall> bowlingBalls;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,19 +48,19 @@ public class LogScoresActivity extends AppCompatActivity implements AdapterView.
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
 
-        //TODO: Read in BowlingBallProcessed.csv file. See YouTube video
+        //This reads in the bowling ball data
+        bowlingBalls = new ArrayList<>();
         readBowlingBallData();
-
-        //List<BowlingBall> bowlingBalls = new ArrayList<>();
         
         //getResources().openRawResource(R.raw.BowlingBallsProcessed);
         ballUsedSpinner = findViewById(R.id.ballUsedSpinner);
 //        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.events_array, android.R.layout.simple_spinner_item);
 //        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        ballUsedSpinner.setAdapter(adapter);
+        ArrayAdapter<BowlingBall> ball_adapter = new ArrayAdapter<BowlingBall>(this, android.R.layout.simple_spinner_item, bowlingBalls);
+        ballUsedSpinner.setAdapter(ball_adapter);
         ballUsedSpinner.setOnItemSelectedListener(this);
 
-        ballEditText = findViewById(R.id.ballUsedEditText);
+//        ballEditText = findViewById(R.id.ballUsedEditText);
         scoreEditText = findViewById(R.id.scoreEditText);
         gameEditText = findViewById(R.id.gameNumberEditText);
 //        scoreListView = findViewById(R.id.scoresListView);
@@ -77,14 +84,15 @@ public class LogScoresActivity extends AppCompatActivity implements AdapterView.
             public void onClick(View v) {
                 //Get values
                 String eventType = spinner.getSelectedItem().toString();
-                String ball = ballEditText.getText().toString();
+//                String ball = ballEditText.getText().toString();
+                String ball = ballUsedSpinner.getSelectedItem().toString();
                 int score = Integer.parseInt(scoreEditText.getText().toString());
                 int game = Integer.parseInt(gameEditText.getText().toString());
 
                 if (!eventType.isEmpty() & !ball.isEmpty() & !scoreEditText.getText().toString().isEmpty() & !gameEditText.getText().toString().isEmpty()) {
                     databaseHelper.addGame(eventType, ball, score, game);
 
-                    ballEditText.setText("");
+//                    ballEditText.setText("");
                     scoreEditText.setText("");
                     gameEditText.setText("");
 
@@ -118,7 +126,9 @@ public class LogScoresActivity extends AppCompatActivity implements AdapterView.
         String line = "";
 
         try {
-            while((line = reader.readLine()) != null) {
+            reader.readLine();
+
+            while ((line = reader.readLine()) != null) {
 
                 String[] tokens = line.split(",");
 
@@ -128,16 +138,18 @@ public class LogScoresActivity extends AppCompatActivity implements AdapterView.
                 currBall.setBrand(tokens[1]);
                 currBall.setCore(tokens[2]);
                 currBall.setCoverstock(tokens[3]);
-                currBall.setDiff(tokens[4]);
-                currBall.setRg(tokens[5]);
-                currBall.setHook(tokens[6]);
+                currBall.setDiff(Float.parseFloat(tokens[4]));
+                currBall.setRg(Float.parseFloat(tokens[5]));
+                currBall.setHook(Float.parseFloat(tokens[6]));
+                bowlingBalls.add(currBall);
 
-            } catch(IOException e) {
+            }
+
+        } catch(IOException e) {
                 Log.wtf("LogScoresActivity", "Error reading data file on line " + line, e);
                 e.printStackTrace();
             }
         }
-    }
 
     public void openAnalyzeScoresActivity() {
         Intent intent = new Intent(this, AnalyzeScoresActivity.class);
