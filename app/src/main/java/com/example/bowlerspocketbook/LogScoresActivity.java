@@ -30,6 +30,7 @@ public class LogScoresActivity extends AppCompatActivity implements AdapterView.
 //    ListView scoreListView;
     Button logScoresBtn;
     Button analyzeScoresBtn;
+    Button resetScoresBtn;
 
     DatabaseHelper databaseHelper;
     ArrayList arrayList;
@@ -66,6 +67,7 @@ public class LogScoresActivity extends AppCompatActivity implements AdapterView.
 //        scoreListView = findViewById(R.id.scoresListView);
         logScoresBtn = findViewById(R.id.logScoresBtn);
         analyzeScoresBtn = findViewById(R.id.analyzeScoresBtn2);
+        resetScoresBtn = findViewById(R.id.resetScoresBtn);
 
         //Initialize DatabaseHelper
         databaseHelper = new DatabaseHelper(LogScoresActivity.this);
@@ -97,7 +99,7 @@ public class LogScoresActivity extends AppCompatActivity implements AdapterView.
                     gameEditText.setText("");
 
                     //Display Success message
-                    Toast.makeText(getApplicationContext(), "Score logged...", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Score logged!", Toast.LENGTH_SHORT).show();
 
 //                    arrayList.clear();
 //                    arrayList.addAll(databaseHelper.getAllScores());
@@ -116,6 +118,19 @@ public class LogScoresActivity extends AppCompatActivity implements AdapterView.
                 openAnalyzeScoresActivity();
             }
         });
+
+        resetScoresBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                resetScores();
+            }
+        });
+    }
+
+    public void resetScores() {
+        databaseHelper.resetScores();
+
+        Toast.makeText(getApplicationContext(), "Scores reset", Toast.LENGTH_SHORT).show();
     }
 
     private void readBowlingBallData() {
@@ -159,7 +174,7 @@ public class LogScoresActivity extends AppCompatActivity implements AdapterView.
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         String text = parent.getItemAtPosition(position).toString();
-        Toast.makeText(parent.getContext(), text, Toast.LENGTH_SHORT).show();
+//        Toast.makeText(parent.getContext(), text, Toast.LENGTH_SHORT).show();
     }
 
     @Override

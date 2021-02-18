@@ -127,14 +127,24 @@
             android:layout_height="wrap_content"
             android:text="Log Score"
             android:layout_gravity="center"
-            android:layout_margin="64dp"/>
+            android:layout_margin="16dp"/>
 
         <Button
             android:id="@+id/analyzeScoresBtn2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Analyze Scores"
-            android:layout_gravity="center" />
+            android:layout_gravity="center"
+            android:layout_margin="16dp"/>
+
+        <Button
+            android:id="@+id/resetScoresBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reset Scores"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"
+            />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

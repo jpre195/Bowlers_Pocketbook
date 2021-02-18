@@ -30,6 +30,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(deleteTable);
     }
 
+    public void resetScores() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String clearDBQuery = "DELETE FROM " + TABLE_NAME;
+        db.execSQL(clearDBQuery);
+    }
+
     public boolean addGame(String event, String ball, int score, int game) {
         //Get writeable database
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
