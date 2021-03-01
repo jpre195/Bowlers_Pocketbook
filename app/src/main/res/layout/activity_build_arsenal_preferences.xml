@@ -8,6 +8,13 @@
     app:layout_constraintWidth_percent=".9"
     tools:context=".BuildArsenalPreferencesActivity">
 
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:fillViewport="false">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -19,7 +26,7 @@
             android:layout_height="wrap_content"
             app:columnCount="2"
             app:orientation="horizontal"
-            app:rowCount="4"
+            app:rowCount="2"
             tools:ignore="MissingClass">
 
             <TextView
@@ -67,16 +74,24 @@
                 app:layout_column="1"
                 app:layout_row="1" />
 
-            <TextView
-                android:id="@+id/rateBrandsText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginBottom="30dp"
-                android:text="Please rate the following \nbrands out of 5"
-                android:singleLine="false"
-                app:layout_column="0"
-                app:layout_row="2" />
+        </androidx.gridlayout.widget.GridLayout>
+
+        <TextView
+            android:id="@+id/rateBrandsText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:text="Please set your brand preferences"
+            android:layout_gravity="center"/>
+
+        <androidx.gridlayout.widget.GridLayout
+            android:id="@+id/brandGridLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:columnCount="2"
+            app:orientation="horizontal"
+            app:rowCount="11"
+            tools:ignore="MissingClass">
 
             <TextView
                 android:id="@+id/nineHundredGlobalText"
@@ -87,20 +102,240 @@
                 android:text="900 Global:"
                 android:singleLine="false"
                 app:layout_column="0"
+                app:layout_row="0" />
+
+            <SeekBar
+                android:id="@+id/nineHundredGlobalSeekBar"
+                android:max="100"
+                android:progress="50"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                app:layout_column="1"
+                app:layout_row="0"/>
+
+            <TextView
+                android:id="@+id/brunswickText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="30dp"
+                android:text="Brunswick:"
+                android:singleLine="false"
+                app:layout_column="0"
+                app:layout_row="1" />
+
+            <SeekBar
+                android:id="@+id/brunswickSeekBar"
+                android:max="100"
+                android:progress="50"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                app:layout_column="1"
+                app:layout_row="1"/>
+
+            <TextView
+                android:id="@+id/columbia300Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="30dp"
+                android:text="Columbia 300:"
+                android:singleLine="false"
+                app:layout_column="0"
+                app:layout_row="2" />
+
+            <SeekBar
+                android:id="@+id/columbia300SeekBar"
+                android:max="100"
+                android:progress="50"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                app:layout_column="1"
+                app:layout_row="2"/>
+
+            <TextView
+                android:id="@+id/dv8Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="30dp"
+                android:text="DV8:"
+                android:singleLine="false"
+                app:layout_column="0"
                 app:layout_row="3" />
 
             <SeekBar
-                android:id="@+id/seekBar"
+                android:id="@+id/dv8SeekBar"
                 android:max="100"
                 android:progress="50"
-                android:layout_width="200dp"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="0dp"
                 app:layout_column="1"
                 app:layout_row="3"/>
 
+            <TextView
+                android:id="@+id/eboniteText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="30dp"
+                android:text="Ebonite:"
+                android:singleLine="false"
+                app:layout_column="0"
+                app:layout_row="4" />
+
+            <SeekBar
+                android:id="@+id/eboniteSeekBar"
+                android:max="100"
+                android:progress="50"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                app:layout_column="1"
+                app:layout_row="4"/>
+
+            <TextView
+                android:id="@+id/hammerText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="30dp"
+                android:text="Hammer:"
+                android:singleLine="false"
+                app:layout_column="0"
+                app:layout_row="5" />
+
+            <SeekBar
+                android:id="@+id/hammerSeekBar"
+                android:max="100"
+                android:progress="50"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                app:layout_column="1"
+                app:layout_row="5"/>
+
+            <TextView
+                android:id="@+id/motivText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="30dp"
+                android:text="Motiv:"
+                android:singleLine="false"
+                app:layout_column="0"
+                app:layout_row="6" />
+
+            <SeekBar
+                android:id="@+id/motivSeekBar"
+                android:max="100"
+                android:progress="50"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                app:layout_column="1"
+                app:layout_row="6"/>
+
+            <TextView
+                android:id="@+id/radicalText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="30dp"
+                android:text="Radical:"
+                android:singleLine="false"
+                app:layout_column="0"
+                app:layout_row="7" />
+
+            <SeekBar
+                android:id="@+id/radicalSeekBar"
+                android:max="100"
+                android:progress="50"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                app:layout_column="1"
+                app:layout_row="7"/>
+
+            <TextView
+                android:id="@+id/rotogripText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="30dp"
+                android:text="Roto Grip:"
+                android:singleLine="false"
+                app:layout_column="0"
+                app:layout_row="8" />
+
+            <SeekBar
+                android:id="@+id/rotogripSeekBar"
+                android:max="100"
+                android:progress="50"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                app:layout_column="1"
+                app:layout_row="8"/>
+
+            <TextView
+                android:id="@+id/stormText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="30dp"
+                android:text="Storm:"
+                android:singleLine="false"
+                app:layout_column="0"
+                app:layout_row="9" />
+
+            <SeekBar
+                android:id="@+id/stormSeekBar"
+                android:max="100"
+                android:progress="50"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                app:layout_column="1"
+                app:layout_row="9"/>
+
+            <TextView
+                android:id="@+id/trackText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="30dp"
+                android:text="Track:"
+                android:singleLine="false"
+                app:layout_column="0"
+                app:layout_row="10" />
+
+            <SeekBar
+                android:id="@+id/trackSeekBar"
+                android:max="100"
+                android:progress="50"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                app:layout_column="1"
+                app:layout_row="10"/>
+
         </androidx.gridlayout.widget.GridLayout>
 
+        <Button
+            android:id="@+id/buildArsenalBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"/>
+
     </LinearLayout>
+
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
