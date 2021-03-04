@@ -15,6 +15,19 @@
         <item>Middle</item>
         <item>Right</item>
     </string-array>
+    <string-array name="ball_brands_array">
+        <item>900 Global</item>
+        <item>Brunswick</item>
+        <item>Columbia 300</item>
+        <item>DV8</item>
+        <item>Ebonite</item>
+        <item>Hammer</item>
+        <item>Motiv</item>
+        <item>Radical</item>
+        <item>Roto Grip</item>
+        <item>Storm</item>
+        <item>Track</item>
+    </string-array>
     <string name="title_activity_analyze_scores">AnalyzeScoresActivity</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>

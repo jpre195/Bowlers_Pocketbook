@@ -91,6 +91,10 @@ public class LogScoresActivity extends AppCompatActivity implements AdapterView.
                 int score = Integer.parseInt(scoreEditText.getText().toString());
                 int game = Integer.parseInt(gameEditText.getText().toString());
 
+                String[] ballArray = ball.split(" ", -1);
+
+                //Remove ball brand from ballArray
+
                 if (!eventType.isEmpty() & !ball.isEmpty() & !scoreEditText.getText().toString().isEmpty() & !gameEditText.getText().toString().isEmpty()) {
                     databaseHelper.addGame(eventType, ball, score, game);
 
