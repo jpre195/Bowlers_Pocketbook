@@ -1,12 +1,16 @@
 package com.example.bowlerspocketbook;
 
 import android.os.Bundle;
+import android.graphics.drawable.Drawable;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.core.content.ContextCompat;
 
 import java.util.ArrayList;
+import java.io.*;
 
 public class AnalyzeScoresActivity extends AppCompatActivity {
 
@@ -51,11 +55,43 @@ public class AnalyzeScoresActivity extends AppCompatActivity {
             scoresList.add(Integer.parseInt((String) arrayList.get(4 * i + 2)));
             gameList.add(Integer.parseInt((String) arrayList.get(4 * i + 3)));
 
-            if (i == 1) {
-                ballImages.add(R.drawable.all_road);
-            } else {
-                ballImages.add(R.drawable.nuclear_cell);
+            String currBall = arrayList.get(4 * i + 1).toString();
+            String ball = "";
+
+            String[] ballArray = currBall.split(" ", -1);
+
+            for (int j = 0; j < ballArray.length; j++) {
+
+                if (j == 0) {
+                    ball += ballArray[j].toLowerCase();
+                } else {
+                    ball += "_" + ballArray[j].toLowerCase();
+                }
             }
+
+            int resId = getResources().getIdentifier(ball, "drawable", getPackageName());
+
+            ballImages.add(resId);
+
+//            if (i == 0) {
+////                InputStream stream = getAssets().open("aero.jpg");
+////                Drawable d = Drawable.createFromStream(stream, null);
+//
+////                ballImages.add(d);
+//
+////                int resId = getResources().getIdentifier("axiom.jpg", "drawable", getPackageName());
+////                int resId = getResourceId(AnalyzeScoresActivity.this, "axiom.jpg", "drawable", getPackageName());
+//                int resId = getResources().getIdentifier("axiom", "drawable", getPackageName());
+//
+//                ballImages.add(resId);
+//
+//                Toast.makeText(getApplicationContext(), String.valueOf(resId), Toast.LENGTH_LONG).show();
+//
+////                ballImages.add(R.drawable.all_road);
+//
+//            } else {
+//                ballImages.add(R.drawable.nuclear_cell);
+//            }
         }
 
 //        int[] ballImages = ballImagesTemp.toArray(new int[0]);
