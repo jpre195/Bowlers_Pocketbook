@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 import android.util.Log;
+import android.content.Context;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -94,9 +95,35 @@ public class LogScoresActivity extends AppCompatActivity implements AdapterView.
                 String[] ballArray = ball.split(" ", -1);
 
                 //Remove ball brand from ballArray
+                String currBrand;
+
+                int brandLength = 0;
+
+                Context context = getApplicationContext();
+                String[] brandsArray = context.getResources().getStringArray(R.array.ball_brands_array);
+
+                for (int i = 0; i < brandsArray.length; i++) {
+                    currBrand = brandsArray[i];
+                    if (ballArray[0].equals(currBrand)) {
+                        brandLength = 1;
+                    } else if ((ballArray[0] + ' ' + ballArray[1]).equals(brandsArray[i])) {
+                        brandLength = 2;
+                    }
+                }
+
+                String ballCleaned = "";
+
+                for (int i = brandLength; i < ballArray.length; i++) {
+
+                    if (i == brandLength) {
+                        ballCleaned += ballArray[i];
+                    } else {
+                        ballCleaned += ' ' + ballArray[i];
+                    }
+                }
 
                 if (!eventType.isEmpty() & !ball.isEmpty() & !scoreEditText.getText().toString().isEmpty() & !gameEditText.getText().toString().isEmpty()) {
-                    databaseHelper.addGame(eventType, ball, score, game);
+                    databaseHelper.addGame(eventType, ballCleaned, score, game);
 
 //                    ballEditText.setText("");
                     scoreEditText.setText("");
