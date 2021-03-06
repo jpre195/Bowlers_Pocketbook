@@ -57,6 +57,8 @@ public class LogScoresActivity extends AppCompatActivity implements AdapterView.
 
 //        gameDate = (DatePicker)findViewById(R.id.gameDatePicker);
 
+//        databaseHelper.onCreate();
+
         //This reads in the bowling ball data
         bowlingBalls = new ArrayList<>();
         readBowlingBallData();
@@ -151,8 +153,14 @@ public class LogScoresActivity extends AppCompatActivity implements AdapterView.
                     }
                 }
 
-                if (!eventType.isEmpty() & !ball.isEmpty() & !scoreEditText.getText().toString().isEmpty() & !gameEditText.getText().toString().isEmpty()) {
-                    databaseHelper.addGame(eventType, ballCleaned, score, game);
+                if (!gameDateEditText.getText().toString().isEmpty() & !eventType.isEmpty() & !ball.isEmpty() & !scoreEditText.getText().toString().isEmpty() & !gameEditText.getText().toString().isEmpty()) {
+                    String[] gameDateArray = gameDateEditText.getText().toString().split("/", -1);
+                    int month = Integer.parseInt(gameDateArray[0]);
+                    int day = Integer.parseInt(gameDateArray[1]);
+                    int year = Integer.parseInt(gameDateArray[2]);
+
+                    databaseHelper.addGame(eventType, ballCleaned, score, game, day, month, year);
+//                    databaseHelper.addGame(eventType, ballCleaned, score, game);
 
 //                    ballEditText.setText("");
                     scoreEditText.setText("");

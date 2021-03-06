@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     //Initialize database
-    private static final String DATABASE_NAME = "bowlers_pocketbook";
+    private static final String DATABASE_NAME = "bowlers_pocketbook_db";
     private static final String TABLE_NAME = "scores";
 
     DatabaseHelper(Context context) {
@@ -20,7 +20,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         //Create table
-        String createTable = "create table " + TABLE_NAME + " (id INTEGER PRIMARY KEY, Event TEXT, Ball TEXT, Score INTEGER, Game INTEGER)";
+        String createTable = "create table " + TABLE_NAME + " (id INTEGER PRIMARY KEY, Event TEXT, Ball TEXT, Score INTEGER, Game INTEGER, Game_Day INTEGER, Game_Month INTEGER, Game_Year INTEGER)";
         db.execSQL(createTable);
     }
 
@@ -36,7 +36,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(clearDBQuery);
     }
 
-    public boolean addGame(String event, String ball, int score, int game) {
+    public boolean addGame(String event, String ball, int score, int game, int day, int month, int year) {
         //Get writeable database
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 
@@ -46,6 +46,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put("Ball", ball);
         contentValues.put("Score", score);
         contentValues.put("Game", game);
+        contentValues.put("Game_Day", day);
+        contentValues.put("Game_Month", month);
+        contentValues.put("Game_Year", year);
 
         //Add values into database
         sqLiteDatabase.insert(TABLE_NAME, null, contentValues);
@@ -66,6 +69,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             arrayList.add(cursor.getString(cursor.getColumnIndex("Ball")));
             arrayList.add(cursor.getString(cursor.getColumnIndex("Score")));
             arrayList.add(cursor.getString(cursor.getColumnIndex("Game")));
+            arrayList.add(cursor.getString(cursor.getColumnIndex("Game_Day")));
+            arrayList.add(cursor.getString(cursor.getColumnIndex("Game_Month")));
+            arrayList.add(cursor.getString(cursor.getColumnIndex("Game_Year")));
             cursor.moveToNext();
         }
 

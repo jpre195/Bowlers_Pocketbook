@@ -50,12 +50,12 @@ public class AnalyzeScoresActivity extends AppCompatActivity {
         int numScores = arrayList.size() / 4;
 
         for (int i = 0; i < numScores; i++) {
-            eventTypeList.add((String) arrayList.get(4 * i));
+            eventTypeList.add((String) arrayList.get(8 * i));
             //ballImages.add(R.drawable.nuclear_cell);
-            scoresList.add(Integer.parseInt((String) arrayList.get(4 * i + 2)));
-            gameList.add(Integer.parseInt((String) arrayList.get(4 * i + 3)));
+            scoresList.add(Integer.parseInt((String) arrayList.get(8 * i + 2)));
+            gameList.add(Integer.parseInt((String) arrayList.get(8 * i + 3)));
 
-            String currBall = arrayList.get(4 * i + 1).toString();
+            String currBall = arrayList.get(8 * i + 1).toString();
             String ball = "";
 
             String[] ballArray = currBall.split(" ", -1);
