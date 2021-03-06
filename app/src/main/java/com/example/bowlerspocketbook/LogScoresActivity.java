@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+import android.widget.DatePicker;
+import android.app.DatePickerDialog;
 import android.util.Log;
 import android.content.Context;
 
@@ -17,6 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Calendar;
 import java.io.*;
 import java.nio.charset.Charset;
 
@@ -28,10 +31,12 @@ public class LogScoresActivity extends AppCompatActivity implements AdapterView.
 //    EditText ballEditText;
     EditText scoreEditText;
     EditText gameEditText;
+    EditText gameDateEditText;
 //    ListView scoreListView;
     Button logScoresBtn;
     Button analyzeScoresBtn;
     Button resetScoresBtn;
+    DatePickerDialog gameDate;
 
     DatabaseHelper databaseHelper;
     ArrayList arrayList;
@@ -50,6 +55,8 @@ public class LogScoresActivity extends AppCompatActivity implements AdapterView.
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
 
+//        gameDate = (DatePicker)findViewById(R.id.gameDatePicker);
+
         //This reads in the bowling ball data
         bowlingBalls = new ArrayList<>();
         readBowlingBallData();
@@ -65,6 +72,7 @@ public class LogScoresActivity extends AppCompatActivity implements AdapterView.
 //        ballEditText = findViewById(R.id.ballUsedEditText);
         scoreEditText = findViewById(R.id.scoreEditText);
         gameEditText = findViewById(R.id.gameNumberEditText);
+        gameDateEditText = findViewById(R.id.gameDateEditText);
 //        scoreListView = findViewById(R.id.scoresListView);
         logScoresBtn = findViewById(R.id.logScoresBtn);
         analyzeScoresBtn = findViewById(R.id.analyzeScoresBtn2);
@@ -79,6 +87,26 @@ public class LogScoresActivity extends AppCompatActivity implements AdapterView.
         //Initialize ArrayAdapter
         arrayAdapter = new ArrayAdapter(LogScoresActivity.this, android.R.layout.simple_list_item_1, arrayList);
 
+        gameDateEditText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Calendar cldr = Calendar.getInstance();
+                int day = cldr.get(Calendar.DAY_OF_MONTH);
+                int month = cldr.get(Calendar.MONTH);
+                int year = cldr.get(Calendar.YEAR);
+
+                gameDate = new DatePickerDialog(LogScoresActivity.this,
+                        new DatePickerDialog.OnDateSetListener() {
+                            @Override
+                            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                                gameDateEditText.setText((monthOfYear + 1) + "/" + dayOfMonth + "/" + year);
+                            }
+                        }, year, month, day);
+                gameDate.show();
+
+            }
+        });
+
 //        //Set arrayAdapter to ListView
 //        scoreListView.setAdapter(arrayAdapter);
 
@@ -91,6 +119,7 @@ public class LogScoresActivity extends AppCompatActivity implements AdapterView.
                 String ball = ballUsedSpinner.getSelectedItem().toString();
                 int score = Integer.parseInt(scoreEditText.getText().toString());
                 int game = Integer.parseInt(gameEditText.getText().toString());
+//                String date = gameDate.getDayOfMonth() + "/" + (gameDate.getMonth() + 1) + "/" + gameDate.getYear();
 
                 String[] ballArray = ball.split(" ", -1);
 
@@ -131,6 +160,7 @@ public class LogScoresActivity extends AppCompatActivity implements AdapterView.
 
                     //Display Success message
                     Toast.makeText(getApplicationContext(), "Score logged!", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(getApplicationContext(), date, Toast.LENGTH_LONG).show();
 
 //                    arrayList.clear();
 //                    arrayList.addAll(databaseHelper.getAllScores());
