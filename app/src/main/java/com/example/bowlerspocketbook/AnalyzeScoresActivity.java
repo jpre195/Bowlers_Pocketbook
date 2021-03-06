@@ -47,15 +47,15 @@ public class AnalyzeScoresActivity extends AppCompatActivity {
 //        //Initialize ArrayAdapter
 //        arrayAdapter = new ArrayAdapter(AnalyzeScoresActivity.this, android.R.layout.simple_list_item_1, arrayList);
 
-        int numScores = arrayList.size() / 4;
+        int numScores = arrayList.size() / 7;
 
         for (int i = 0; i < numScores; i++) {
-            eventTypeList.add((String) arrayList.get(8 * i));
+            eventTypeList.add((String) arrayList.get(7 * i));
             //ballImages.add(R.drawable.nuclear_cell);
-            scoresList.add(Integer.parseInt((String) arrayList.get(8 * i + 2)));
-            gameList.add(Integer.parseInt((String) arrayList.get(8 * i + 3)));
+            scoresList.add(Integer.parseInt((String) arrayList.get(7 * i + 2)));
+            gameList.add(Integer.parseInt((String) arrayList.get(7 * i + 3)));
 
-            String currBall = arrayList.get(8 * i + 1).toString();
+            String currBall = arrayList.get(7 * i + 1).toString();
             String ball = "";
 
             String[] ballArray = currBall.split(" ", -1);

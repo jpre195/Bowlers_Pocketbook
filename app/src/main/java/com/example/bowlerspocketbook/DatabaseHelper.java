@@ -61,7 +61,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ArrayList<String> arrayList = new ArrayList<String>();
 
         //Create cursor to select all values
-        Cursor cursor = sqLiteDatabase.rawQuery("select * from " + TABLE_NAME, null);
+        Cursor cursor = sqLiteDatabase.rawQuery("select * from " + TABLE_NAME + " order by Game_Year desc, Game_Month desc, Game_Day desc, Event, Game desc", null);
         cursor.moveToFirst();
 
         while (!cursor.isAfterLast()) {
