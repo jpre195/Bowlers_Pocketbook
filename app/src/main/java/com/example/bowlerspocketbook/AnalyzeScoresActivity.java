@@ -30,6 +30,7 @@ public class AnalyzeScoresActivity extends AppCompatActivity {
 
     ArrayList<Integer> scoresList = new ArrayList<Integer>();
     ArrayList<String> eventTypeList = new ArrayList<String>();
+    ArrayList<String> datesList = new ArrayList<String>();
     ArrayList<Integer> gameList = new ArrayList<Integer>();
     ArrayList<Integer> ballImages = new ArrayList<Integer>();
 
@@ -50,7 +51,19 @@ public class AnalyzeScoresActivity extends AppCompatActivity {
         int numScores = arrayList.size() / 7;
 
         for (int i = 0; i < numScores; i++) {
+//            int day = Integer.parseInt((String) arrayList.get(7 * i + 4));
+//            int month = Integer.parseInt((String) arrayList.get(7 * i + 5));
+//            int year = Integer.parseInt((String) arrayList.get(7 * i + 6));
+
+            String day = (String) arrayList.get(7 * i + 4);
+            String month = (String) arrayList.get(7 * i + 5);
+            String year = (String) arrayList.get(7 * i + 6);
+
+//            String date = month.toString() + "/" + day.toString() + "/" + year.toString();
+            String date = month + "/" + day + "/" + year;
+
             eventTypeList.add((String) arrayList.get(7 * i));
+            datesList.add(date);
             //ballImages.add(R.drawable.nuclear_cell);
             scoresList.add(Integer.parseInt((String) arrayList.get(7 * i + 2)));
             gameList.add(Integer.parseInt((String) arrayList.get(7 * i + 3)));
@@ -104,7 +117,7 @@ public class AnalyzeScoresActivity extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        programAdapter = new AnalyzeScoresAdapter(this, eventTypeList, ballImages, gameList, scoresList);
+        programAdapter = new AnalyzeScoresAdapter(this, eventTypeList, ballImages, gameList, datesList, scoresList);
         recyclerView.setAdapter(programAdapter);
 
     }

@@ -18,6 +18,7 @@ public class AnalyzeScoresAdapter extends RecyclerView.Adapter<AnalyzeScoresAdap
     ArrayList<String> eventTypeList;
     ArrayList<Integer> ballImages;
     ArrayList<Integer> gameList;
+    ArrayList<String> datesList;
     ArrayList<Integer> scoresList;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -25,6 +26,7 @@ public class AnalyzeScoresAdapter extends RecyclerView.Adapter<AnalyzeScoresAdap
         TextView scoreTextView;
         TextView eventTextView;
         TextView gameTextView;
+        TextView dateTextView;
         ImageView ballImageView;
 
         public ViewHolder(@NonNull View itemView) {
@@ -33,13 +35,15 @@ public class AnalyzeScoresAdapter extends RecyclerView.Adapter<AnalyzeScoresAdap
             scoreTextView = itemView.findViewById(R.id.scoreExampleTextView);
             eventTextView = itemView.findViewById(R.id.eventExampleTextView);
             gameTextView = itemView.findViewById(R.id.gameExampleTextView);
+            dateTextView = itemView.findViewById(R.id.dateExampleTextView);
             ballImageView = itemView.findViewById(R.id.ballImageView);
         }
     }
 
-    public AnalyzeScoresAdapter(Context context, ArrayList<String> eventTypeList, ArrayList<Integer> ballImages, ArrayList<Integer> gameList, ArrayList<Integer> scoresList) {
+    public AnalyzeScoresAdapter(Context context, ArrayList<String> eventTypeList, ArrayList<Integer> ballImages, ArrayList<Integer> gameList, ArrayList<String> datesList, ArrayList<Integer> scoresList) {
         this.context = context;
         this.eventTypeList = eventTypeList;
+        this.datesList = datesList;
         this.ballImages = ballImages;
         this.gameList = gameList;
         this.scoresList = scoresList;
@@ -59,6 +63,7 @@ public class AnalyzeScoresAdapter extends RecyclerView.Adapter<AnalyzeScoresAdap
         holder.ballImageView.setImageResource(ballImages.get(position));
         holder.eventTextView.setText("Event: " + eventTypeList.get(position));
         holder.gameTextView.setText("Game: " + gameList.get(position));
+        holder.dateTextView.setText(datesList.get(position));
         holder.scoreTextView.setText("" + scoresList.get(position));
 
     }
