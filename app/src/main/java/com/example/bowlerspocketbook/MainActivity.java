@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openAnalyzeScoresActivity() {
-        Intent intent = new Intent(this, AnalyzeScoresActivity.class);
+        Intent intent = new Intent(this, AnalyzeScoresMain.class);
         startActivity(intent);
     }
 
