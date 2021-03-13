@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AnalyzeScoresMetricsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="175dp"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="#FF0000"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:id="@+id/highGameTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="High game"
+                    android:textSize="16sp"
+                    android:textColor="#ffffff"
+                    android:layout_gravity="center"
+                    android:padding="8dp"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="#FFA500"
+                android:layout_marginRight="12dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp">
+
+                <androidx.cardview.widget.CardView
+                    app:cardElevation = "16dp"
+                    app:cardCornerRadius = "160dp"
+                    android:foregroundGravity = "center"
+                    android:layout_centerInParent = "true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/mostUsedBall"
+                        android:src="@drawable/omega_crux"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerCrop"
+                        android:layout_gravity="center_horizontal">
+
+                    </ImageView>
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/mostUsedBallTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Most used ball"
+                    android:textSize="16sp"
+                    android:textColor="#ffffff"
+                    android:layout_gravity="center_horizontal"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="#FCFF00"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:id="@+id/highSeriesTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="High \nseries"
+                    android:textSize="16sp"
+                    android:textColor="#ffffff"
+                    android:layout_gravity="center_horizontal"
+                    android:padding="8dp"
+                    android:textStyle="bold">
+
+                </TextView>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="175dp"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="#00FF00"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:id="@+id/practiceAverageTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Practice \nAverage"
+                    android:textSize="16sp"
+                    android:textColor="#ffffff"
+                    android:layout_gravity="center"
+                    android:padding="8dp"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="#0000FF"
+                android:layout_marginRight="12dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:id="@+id/leagueAverageTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="League \nAverage"
+                    android:textSize="16sp"
+                    android:textColor="#ffffff"
+                    android:layout_gravity="center"
+                    android:padding="8dp"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="#800080"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:id="@+id/tournamentAverageTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tournament \nAverage"
+                    android:textSize="16sp"
+                    android:textColor="#ffffff"
+                    android:layout_gravity="center_horizontal"
+                    android:textStyle="bold">
+
+                </TextView>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
