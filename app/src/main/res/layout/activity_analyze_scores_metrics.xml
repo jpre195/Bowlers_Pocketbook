@@ -29,9 +29,21 @@
                 android:layout_marginBottom="12dp">
 
                 <TextView
+                    android:id="@+id/highGameActualTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-"
+                    android:textSize="48sp"
+                    android:textColor="#ffffff"
+                    android:layout_gravity="center"
+                    android:padding="8dp"
+                    android:textStyle="bold"/>
+
+                <TextView
                     android:id="@+id/highGameTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
                     android:text="High game"
                     android:textSize="16sp"
                     android:textColor="#ffffff"
@@ -92,10 +104,22 @@
                 android:layout_marginBottom="12dp">
 
                 <TextView
+                    android:id="@+id/highSeriesActualTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-"
+                    android:textSize="48sp"
+                    android:textColor="#ffffff"
+                    android:layout_gravity="center"
+                    android:padding="8dp"
+                    android:textStyle="bold"/>
+
+                <TextView
                     android:id="@+id/highSeriesTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="High \nseries"
+                    android:layout_marginTop="30dp"
+                    android:text="High series"
                     android:textSize="16sp"
                     android:textColor="#ffffff"
                     android:layout_gravity="center_horizontal"
@@ -125,9 +149,21 @@
                 android:layout_marginBottom="12dp">
 
                 <TextView
+                    android:id="@+id/practiceAverageActualTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-"
+                    android:textSize="48sp"
+                    android:textColor="#ffffff"
+                    android:layout_gravity="center"
+                    android:padding="8dp"
+                    android:textStyle="bold"/>
+
+                <TextView
                     android:id="@+id/practiceAverageTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
                     android:text="Practice \nAverage"
                     android:textSize="16sp"
                     android:textColor="#ffffff"
@@ -147,9 +183,21 @@
                 android:layout_marginBottom="12dp">
 
                 <TextView
+                    android:id="@+id/leagueAverageActualTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-"
+                    android:textSize="48sp"
+                    android:textColor="#ffffff"
+                    android:layout_gravity="center"
+                    android:padding="8dp"
+                    android:textStyle="bold"/>
+
+                <TextView
                     android:id="@+id/leagueAverageTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
                     android:text="League \nAverage"
                     android:textSize="16sp"
                     android:textColor="#ffffff"
@@ -168,13 +216,26 @@
                 android:layout_marginBottom="12dp">
 
                 <TextView
+                    android:id="@+id/tournamentAverageActualTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-"
+                    android:textSize="48sp"
+                    android:textColor="#ffffff"
+                    android:layout_gravity="center"
+                    android:padding="8dp"
+                    android:textStyle="bold"/>
+
+                <TextView
                     android:id="@+id/tournamentAverageTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
                     android:text="Tournament \nAverage"
                     android:textSize="16sp"
                     android:textColor="#ffffff"
                     android:layout_gravity="center_horizontal"
+                    android:padding="8dp"
                     android:textStyle="bold">
 
                 </TextView>

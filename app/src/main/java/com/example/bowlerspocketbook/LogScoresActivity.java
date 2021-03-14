@@ -236,7 +236,7 @@ public class LogScoresActivity extends AppCompatActivity implements AdapterView.
         }
 
     public void openAnalyzeScoresActivity() {
-        Intent intent = new Intent(this, AnalyzeScoresActivity.class);
+        Intent intent = new Intent(this, AnalyzeScoresMain.class);
         startActivity(intent);
     }
 
