@@ -23,7 +23,7 @@
                 android:layout_width="120dp"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:background="#FF0000"
+                android:background="@drawable/high_game_background"
                 android:layout_marginTop="12dp"
                 android:layout_marginRight="12dp"
                 android:layout_marginBottom="12dp">
@@ -57,7 +57,7 @@
                 android:layout_width="120dp"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:background="#FFA500"
+                android:background="@drawable/most_used_ball_background"
                 android:layout_marginRight="12dp"
                 android:layout_marginTop="12dp"
                 android:layout_marginBottom="12dp">
@@ -68,7 +68,8 @@
                     android:foregroundGravity = "center"
                     android:layout_centerInParent = "true"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp">
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -99,7 +100,7 @@
                 android:layout_width="120dp"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:background="#FCFF00"
+                android:background="@drawable/high_series_background"
                 android:layout_marginTop="12dp"
                 android:layout_marginBottom="12dp">
 
@@ -143,7 +144,7 @@
                 android:layout_width="120dp"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:background="#00FF00"
+                android:background="@drawable/practice_average_background"
                 android:layout_marginTop="12dp"
                 android:layout_marginRight="12dp"
                 android:layout_marginBottom="12dp">
@@ -177,7 +178,7 @@
                 android:layout_width="120dp"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:background="#0000FF"
+                android:background="@drawable/league_average_background"
                 android:layout_marginRight="12dp"
                 android:layout_marginTop="12dp"
                 android:layout_marginBottom="12dp">
@@ -211,7 +212,7 @@
                 android:layout_width="120dp"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:background="#800080"
+                android:background="@drawable/tournament_average_background"
                 android:layout_marginTop="12dp"
                 android:layout_marginBottom="12dp">
 
