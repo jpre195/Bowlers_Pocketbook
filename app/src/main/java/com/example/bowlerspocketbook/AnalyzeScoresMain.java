@@ -25,8 +25,13 @@ public class AnalyzeScoresMain extends TabActivity {
         Intent scoresMetricsActivityIntent = new Intent().setClass(this, AnalyzeScoresMetricsActivity.class);
         TabSpec tabSpecAnalyzeScoresMetrics = tabHost.newTabSpec("Metrics").setIndicator("Metrics").setContent(scoresMetricsActivityIntent);
 
+        //Scores graphs activity
+        Intent scoresGraphsActivityIntent = new Intent().setClass(this, AnalyzeScoresGraphsActivity.class);
+        TabSpec tabSpecAnalyzeScoresGraphs = tabHost.newTabSpec("Graphs").setIndicator("Graphs").setContent(scoresGraphsActivityIntent);
+
         tabHost.addTab(tabSpecAnalyzeScores);
         tabHost.addTab(tabSpecAnalyzeScoresMetrics);
+        tabHost.addTab(tabSpecAnalyzeScoresGraphs);
 
         tabHost.setCurrentTab(0);
     }
