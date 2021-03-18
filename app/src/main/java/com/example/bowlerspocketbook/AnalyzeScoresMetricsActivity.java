@@ -4,9 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.ImageView;
 import android.util.Log;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
@@ -19,6 +22,8 @@ public class AnalyzeScoresMetricsActivity extends AppCompatActivity {
     TextView practiceAverageTextView;
     TextView leagueAverageTextView;
     TextView tournamentAverageTextView;
+
+    ImageView mostUsedBallImageView;
 
     DatabaseHelper databaseHelper;
     ArrayList scores;
@@ -37,6 +42,8 @@ public class AnalyzeScoresMetricsActivity extends AppCompatActivity {
         leagueAverageTextView = (TextView) findViewById(R.id.leagueAverageActualTextView);
         tournamentAverageTextView = (TextView) findViewById(R.id.tournamentAverageActualTextView);
 
+        mostUsedBallImageView = (ImageView) findViewById(R.id.mostUsedBall);
+
         //Get high game
         //Initialize DatabaseHelper
         databaseHelper = new DatabaseHelper(AnalyzeScoresMetricsActivity.this);
@@ -48,6 +55,7 @@ public class AnalyzeScoresMetricsActivity extends AppCompatActivity {
         setPracticeAverage(scores);
         setLeagueAverage(scores);
         setTournamentAverage(scores);
+        setMostUsedBall(scores);
     }
 
     private void setPracticeAverage(ArrayList scores) {
@@ -138,16 +146,79 @@ public class AnalyzeScoresMetricsActivity extends AppCompatActivity {
     private void setHighGame(ArrayList scores) {
         int numScores = scores.size() / 7;
 
-        for (int i = 0; i < numScores; i++) {
-            scoresList.add(Integer.parseInt((String) scores.get(7 * i + 2)));
+        if (numScores > 0) {
+
+            for (int i = 0; i < numScores; i++) {
+                scoresList.add(Integer.parseInt((String) scores.get(7 * i + 2)));
+            }
+
+            List<Integer> scoresListSorted = new ArrayList<>(scoresList);
+
+            Collections.sort(scoresListSorted);
+
+            int highGame = scoresListSorted.get(scoresListSorted.size() - 1);
+
+            highGameTextView.setText(String.valueOf(highGame));
+
+        }
+    }
+
+    private void setMostUsedBall(ArrayList scores) {
+        int numScores = scores.size() / 7;
+
+        ArrayList<String> ballsUsed = new ArrayList<String>();
+
+        if (numScores > 0) {
+
+            for (int i = 0; i< numScores; i++) {
+
+                ballsUsed.add((String) scores.get(7 * i + 1));
+
+            }
+
+            String mostUsedBall = getMostCommonElement(ballsUsed);
+
+            String[] ballArray = mostUsedBall.split(" ", -1);
+            String ball = "";
+
+            for (int j = 0; j < ballArray.length; j++) {
+
+                if (j == 0) {
+                    ball += ballArray[j].toLowerCase();
+                } else {
+                    ball += "_" + ballArray[j].toLowerCase();
+                }
+            }
+
+            int resId = getResources().getIdentifier(ball, "drawable", getPackageName());
+
+            mostUsedBallImageView.setImageResource(resId);
+        }
+    }
+
+    private String getMostCommonElement(ArrayList<String> list) {
+
+        Map<String, Integer> map = new HashMap<>();
+
+        for (int i = 0; i < list.size(); i++) {
+            if (map.containsKey(list.get(i))) {
+                map.put(list.get(i), map.get(list.get(i)) + 1);
+            } else {
+                map.put(list.get(i), 1);
+            }
         }
 
-        List<Integer> scoresListSorted = new ArrayList<>(scoresList);
+        int max = 0;
+        String mostUsedBall = "";
 
-        Collections.sort(scoresListSorted);
+        for (String key : map.keySet()) {
+            if (map.get(key) > max) {
+                max = map.get(key);
+                mostUsedBall = key;
+            }
+        }
 
-        int highGame = scoresListSorted.get(scoresListSorted.size() - 1);
+        return mostUsedBall;
 
-        highGameTextView.setText(String.valueOf(highGame));
     }
 }

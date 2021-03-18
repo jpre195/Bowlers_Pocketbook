@@ -35,7 +35,8 @@ public class AnalyzeScoresGraphsActivity extends AppCompatActivity {
         databaseHelper = new DatabaseHelper(AnalyzeScoresGraphsActivity.this);
 
         //Add database values to ArrayList
-        scores = databaseHelper.getAllScores();
+//        scores = databaseHelper.getAllScores();
+        scores = databaseHelper.getScores("League");
 //        Log.d("numScores", "Test 1");
         int numScores = scores.size() / 7;
 //        Log.d("numScores", "Test 2");
@@ -62,7 +63,7 @@ public class AnalyzeScoresGraphsActivity extends AppCompatActivity {
 //        dataSet.setDrawCubic(true);
         dataSet.setMode(LineDataSet.Mode.CUBIC_BEZIER);
         dataSet.setLineWidth(5);
-        dataSet.setValueTextSize(16f);
+        dataSet.setDrawValues(false);
         LineData lineData = new LineData(dataSet);
 
         leagueLineChart.setData(lineData);
