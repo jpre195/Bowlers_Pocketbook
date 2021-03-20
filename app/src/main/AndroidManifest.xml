@@ -10,7 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".AnalyzeScoresGraphsActivity"></activity>
+        <activity android:name=".FindABallActivity"></activity>
+        <activity android:name=".AnalyzeScoresGraphsActivity" />
         <activity android:name=".AnalyzeScoresMetricsActivity" />
         <activity android:name=".AnalyzeScoresMain" />
         <activity android:name=".BuildArsenalPreferencesActivity" />

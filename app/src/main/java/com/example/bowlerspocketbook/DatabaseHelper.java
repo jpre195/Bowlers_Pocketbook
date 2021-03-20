@@ -100,4 +100,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         return arrayList;
     }
+
+    public ArrayList getSeries() {
+        //Get Readable database
+        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+        ArrayList<String> arrayList = new ArrayList<String>();
+
+        //Create cursor to select all values
+        Cursor cursor = sqLiteDatabase.rawQuery("select Event, Game_Day, Game_Month, Game_Year, sum(Score) Series from " + TABLE_NAME + " where Event <> 'Practice' group by Event, Game_Day, Game_Month, Game_Year order by Game_Year desc, Game_Month desc, Game_Day desc, Event", null);
+        cursor.moveToFirst();
+
+        while (!cursor.isAfterLast()) {
+            arrayList.add(cursor.getString(cursor.getColumnIndex("Event")));
+            arrayList.add(cursor.getString(cursor.getColumnIndex("Game_Day")));
+            arrayList.add(cursor.getString(cursor.getColumnIndex("Game_Month")));
+            arrayList.add(cursor.getString(cursor.getColumnIndex("Game_Year")));
+            arrayList.add(cursor.getString(cursor.getColumnIndex("Series")));
+            cursor.moveToNext();
+        }
+
+        return arrayList;
+    }
 }

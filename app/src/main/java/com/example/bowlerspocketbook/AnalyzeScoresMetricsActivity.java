@@ -27,6 +27,7 @@ public class AnalyzeScoresMetricsActivity extends AppCompatActivity {
 
     DatabaseHelper databaseHelper;
     ArrayList scores;
+    ArrayList series;
 
     ArrayList<Integer> scoresList = new ArrayList<Integer>();
 
@@ -50,12 +51,14 @@ public class AnalyzeScoresMetricsActivity extends AppCompatActivity {
 
         //Add database values to ArrayList
         scores = databaseHelper.getAllScores();
+        series = databaseHelper.getSeries();
 
         setHighGame(scores);
         setPracticeAverage(scores);
         setLeagueAverage(scores);
         setTournamentAverage(scores);
         setMostUsedBall(scores);
+        setHighSeries(series);
     }
 
     private void setPracticeAverage(ArrayList scores) {
@@ -159,6 +162,28 @@ public class AnalyzeScoresMetricsActivity extends AppCompatActivity {
             int highGame = scoresListSorted.get(scoresListSorted.size() - 1);
 
             highGameTextView.setText(String.valueOf(highGame));
+
+        }
+    }
+
+    private void setHighSeries(ArrayList series) {
+        int numScores = series.size() / 5;
+
+        ArrayList<Integer> seriesList = new ArrayList<Integer>();
+
+        if (numScores > 0) {
+
+            for (int i = 0; i < numScores; i++) {
+                seriesList.add(Integer.parseInt((String) series.get(5 * i + 4)));
+            }
+
+            List<Integer> seriesListSorted = new ArrayList<>(seriesList);
+
+            Collections.sort(seriesListSorted);
+
+            int highSeries = seriesListSorted.get(seriesListSorted.size() - 1);
+
+            highSeriesTextView.setText(String.valueOf(highSeries));
 
         }
     }
