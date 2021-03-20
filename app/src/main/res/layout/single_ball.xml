@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/single_score_background">
+
+    <ImageView
+        android:id="@+id/ballImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        tools:srcCompat="@tools:sample/avatars"
+        android:layout_margin="10dp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Brand"
+            android:textSize="14sp"
+            android:id="@+id/brandExampleTextView"/>
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Ball"
+            android:textSize="14sp"
+            android:id="@+id/ballExampleTextView"/>
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Core"
+            android:textSize="14sp"
+            android:id="@+id/coreExampleTextView"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_marginRight="10dp"
+        android:gravity="right"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="RG"
+            android:textSize="14sp"
+            android:gravity="right"
+            android:id="@+id/rgExampleTextView"/>
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="Differential"
+            android:textSize="14sp"
+            android:gravity="right"
+            android:id="@+id/differentialExampleTextView"/>
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="Coverstock"
+            android:textSize="14sp"
+            android:gravity="right"
+            android:id="@+id/coverstockExampleTextView"/>
+
+    </LinearLayout>
+
+</LinearLayout>
