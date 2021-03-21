@@ -73,12 +73,16 @@ public class FindABallActivity extends AppCompatActivity {
 
             String[] ballArray = currBall.split(" ", -1);
 
+//            if (ballArray[ballArray.length - 1].equals("-")) {
+//                ballArray.remove(ballArray.length - 1);
+//            }
+
             for (int j = 0; j < ballArray.length; j++) {
 
                 if (j == 0) {
-                    ball += ballArray[j].toLowerCase();
+                    ball += ballArray[j].toLowerCase().replace("/", "_").replace("-", "_").replace(".", "_").replace("'", "_").replace("!", "_");
                 } else {
-                    ball += "_" + ballArray[j].toLowerCase();
+                    ball += "_" + ballArray[j].toLowerCase().replace("/", "_").replace("-", "_").replace(".", "_").replace("'", "_").replace("!", "_");
                 }
             }
 
