@@ -17,11 +17,11 @@ public class FindABallAdapter extends RecyclerView.Adapter<FindABallAdapter.View
     Context context;
     ArrayList<String> brandList;
     ArrayList<Integer> ballImages;
-    ArrayList<Integer> ballNameList;
+    ArrayList<String> ballNameList;
     ArrayList<String> coreList;
-    ArrayList<Integer> rgList;
-    ArrayList<Integer> diffList;
-    ArrayList<Integer> coverList;
+    ArrayList<Float> rgList;
+    ArrayList<Float> diffList;
+    ArrayList<String> coverList;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
@@ -46,15 +46,15 @@ public class FindABallAdapter extends RecyclerView.Adapter<FindABallAdapter.View
         }
     }
 
-    public FindABallAdapter(Context context, ArrayList<String> brandList, ArrayList<Integer> ballImages, ArrayList<Integer> ballNameList, ArrayList<String> coreList, ArrayList<Integer> rgList, ArrayList<Integer> diffList, ArrayList<Integer> coverList) {
+    public FindABallAdapter(Context context, ArrayList<String> brandList, ArrayList<Integer> ballImages, ArrayList<String> ballNameList, ArrayList<String> coreList, ArrayList<Float> rgList, ArrayList<Float> diffList, ArrayList<String> coverList) {
         this.context = context;
         this.brandList = brandList;
         this.ballNameList = ballNameList;
         this.ballImages = ballImages;
         this.coreList = coreList;
         this.rgList = rgList;
-        this.rgList = diffList;
-        this.rgList = coverList;
+        this.diffList = diffList;
+        this.coverList = coverList;
     }
 
     @NonNull
@@ -72,8 +72,8 @@ public class FindABallAdapter extends RecyclerView.Adapter<FindABallAdapter.View
         holder.brandTextView.setText(brandList.get(position));
         holder.ballNameTextView.setText(ballNameList.get(position));
         holder.coreTextView.setText(coreList.get(position));
-        holder.rgTextView.setText(coreList.get(position));
-        holder.diffTextView.setText(diffList.get(position));
+        holder.rgTextView.setText(String.valueOf(rgList.get(position)));
+        holder.diffTextView.setText(String.valueOf(diffList.get(position)));
         holder.coverTextView.setText(coverList.get(position));
 
     }

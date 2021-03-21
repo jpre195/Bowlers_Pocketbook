@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
     private Button logScoresBtn;
     private Button analyzeScoresBtn;
     private Button buildArsenalBtn;
+    private Button findABallBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         logScoresBtn = (Button) findViewById(R.id.logScoresBtn);
         analyzeScoresBtn = (Button) findViewById(R.id.analyzeScoresBtn);
         buildArsenalBtn = (Button) findViewById(R.id.buildArsenalBtn);
+        findABallBtn = (Button) findViewById(R.id.findABallBtn);
 
         logScoresBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,6 +44,18 @@ public class MainActivity extends AppCompatActivity {
                 openBuildArsenalActivity();
             }
         });
+
+        findABallBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openFindABallActivity();
+            }
+        });
+    }
+
+    public void openFindABallActivity() {
+        Intent intent = new Intent(this, FindABallActivity.class);
+        startActivity(intent);
     }
 
     public void openBuildArsenalActivity() {
