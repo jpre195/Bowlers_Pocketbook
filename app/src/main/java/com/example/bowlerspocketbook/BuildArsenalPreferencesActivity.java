@@ -9,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Spinner;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemSelectedListener;
@@ -24,11 +25,15 @@ public class BuildArsenalPreferencesActivity extends AppCompatActivity implement
 
     Spinner playStyleSpinner;
     Spinner releasePositionSpinner;
+    TextView toolbarTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_build_arsenal_preferences);
+
+        toolbarTitle = (TextView) findViewById(R.id.toolbar_title);
+        toolbarTitle.setText("Build Arsenal");
 
         playStyleSpinner = findViewById(R.id.playStyleSpinner);
         ArrayAdapter<CharSequence> playStyleAdapter = ArrayAdapter.createFromResource(this, R.array.play_style_array, android.R.layout.simple_spinner_item);

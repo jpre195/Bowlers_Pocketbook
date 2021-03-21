@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".FindABallActivity">
     <include
-        layout="@layout/toolbar"
+        layout="@layout/toolbar_filter"
         android:id="@+id/toolbar"
         android:layout_height="wrap_content"/>
 

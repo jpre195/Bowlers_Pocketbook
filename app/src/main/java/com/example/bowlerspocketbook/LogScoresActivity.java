@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 import android.widget.DatePicker;
+import android.widget.TextView;
 import android.app.DatePickerDialog;
 import android.util.Log;
 import android.content.Context;
@@ -44,10 +45,15 @@ public class LogScoresActivity extends AppCompatActivity implements AdapterView.
 
     List<BowlingBall> bowlingBalls;
 
+    TextView toolbarTitle;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_scores);
+
+        toolbarTitle = (TextView) findViewById(R.id.toolbar_title);
+        toolbarTitle.setText("Log Scores");
 
         spinner = findViewById(R.id.eventTypeSpinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.events_array, android.R.layout.simple_spinner_item);

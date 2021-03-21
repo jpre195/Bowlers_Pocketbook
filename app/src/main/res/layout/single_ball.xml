@@ -26,12 +26,14 @@
             android:layout_width="wrap_content"
             android:text="Brand"
             android:textSize="14sp"
+            android:textColor="#000000"
             android:id="@+id/brandExampleTextView"/>
 
         <TextView
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:text="Ball"
+            android:textColor="#000000"
             android:textSize="14sp"
             android:id="@+id/ballExampleTextView"/>
 
@@ -40,6 +42,7 @@
             android:layout_width="wrap_content"
             android:text="Core"
             android:textSize="14sp"
+            android:textColor="#000000"
             android:id="@+id/coreExampleTextView"/>
 
     </LinearLayout>
@@ -57,6 +60,7 @@
             android:layout_width="match_parent"
             android:text="RG"
             android:textSize="14sp"
+            android:textColor="#000000"
             android:gravity="right"
             android:id="@+id/rgExampleTextView"/>
 
@@ -65,6 +69,7 @@
             android:layout_width="match_parent"
             android:text="Differential"
             android:textSize="14sp"
+            android:textColor="#000000"
             android:gravity="right"
             android:id="@+id/differentialExampleTextView"/>
 
@@ -73,6 +78,7 @@
             android:layout_width="match_parent"
             android:text="Coverstock"
             android:textSize="14sp"
+            android:textColor="#000000"
             android:gravity="right"
             android:id="@+id/coverstockExampleTextView"/>
 

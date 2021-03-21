@@ -3,6 +3,7 @@ package com.example.bowlerspocketbook;
 import android.os.Bundle;
 import android.graphics.drawable.Drawable;
 import android.widget.Toast;
+import android.widget.TextView;
 import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -31,10 +32,15 @@ public class FindABallActivity extends AppCompatActivity {
     RecyclerView.Adapter programAdapter;
     RecyclerView.LayoutManager layoutManager;
 
+    TextView toolbarTitle;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_find_a_ball);
+
+        toolbarTitle = (TextView) findViewById(R.id.toolbar_filter_title);
+        toolbarTitle.setText("Find a Ball");
 
         brandList = new ArrayList<String>();
         ballImages = new ArrayList<Integer>();
