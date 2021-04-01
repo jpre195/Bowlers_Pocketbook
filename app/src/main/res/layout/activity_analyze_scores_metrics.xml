@@ -6,12 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".AnalyzeScoresMetricsActivity"
     android:background="#ffffff">
+    <include layout="@layout/toolbar"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="84dp"
         android:layout_marginBottom="12dp">
 
         <LinearLayout

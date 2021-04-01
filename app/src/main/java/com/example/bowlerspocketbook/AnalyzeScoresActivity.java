@@ -8,11 +8,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.core.content.ContextCompat;
+import androidx.appcompat.widget.PopupMenu;
+import android.widget.ImageButton;
+import android.view.MenuItem;
+import android.view.View;
+import android.content.Intent;
 
 import java.util.ArrayList;
 import java.io.*;
 
-public class AnalyzeScoresActivity extends AppCompatActivity {
+public class AnalyzeScoresActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
 
     RecyclerView recyclerView;
     RecyclerView.Adapter programAdapter;
@@ -20,6 +25,7 @@ public class AnalyzeScoresActivity extends AppCompatActivity {
 
     DatabaseHelper databaseHelper;
     ArrayList arrayList;
+    ImageButton activityMenuBtn;
 //    ArrayAdapter arrayAdapter;
 
     //TODO change these so get data from database
@@ -38,6 +44,18 @@ public class AnalyzeScoresActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_analyze_scores);
+
+        activityMenuBtn = (ImageButton) findViewById(R.id.menu_button);
+
+        activityMenuBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PopupMenu activityMenuPopup = new PopupMenu(AnalyzeScoresActivity.this, v);
+                activityMenuPopup.setOnMenuItemClickListener(AnalyzeScoresActivity.this);
+                activityMenuPopup.inflate(R.menu.activity_menu);
+                activityMenuPopup.show();
+            }
+        });
 
         //Initialize DatabaseHelper
         databaseHelper = new DatabaseHelper(AnalyzeScoresActivity.this);
@@ -120,5 +138,48 @@ public class AnalyzeScoresActivity extends AppCompatActivity {
         programAdapter = new AnalyzeScoresAdapter(this, eventTypeList, ballImages, gameList, datesList, scoresList);
         recyclerView.setAdapter(programAdapter);
 
+    }
+
+    public void openFindABallActivity() {
+        Intent intent = new Intent(this, FindABallActivity.class);
+        startActivity(intent);
+    }
+
+    public void openBuildArsenalActivity() {
+        Intent intent = new Intent(this, BuildArsenalPreferencesActivity.class);
+        startActivity(intent);
+    }
+
+    public void openHomeActivity() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    public void openLogScoresActivity() {
+        Intent intent = new Intent(this, LogScoresActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public boolean onMenuItemClick(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.goToHome:
+                openHomeActivity();
+                return true;
+            case R.id.goToBuildArsenal:
+                openBuildArsenalActivity();
+                return true;
+            case R.id.goToFindABall:
+                openFindABallActivity();
+                return true;
+            case R.id.goToLogScores:
+                openLogScoresActivity();
+                return true;
+            case R.id.goToAnalyzeScores:
+                return false;
+            default:
+                return false;
+        }
     }
 }

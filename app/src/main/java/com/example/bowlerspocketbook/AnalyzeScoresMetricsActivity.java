@@ -15,7 +15,13 @@ import java.util.List;
 import java.util.Objects;
 import java.io.*;
 
-public class AnalyzeScoresMetricsActivity extends AppCompatActivity {
+import androidx.appcompat.widget.PopupMenu;
+import android.widget.ImageButton;
+import android.view.MenuItem;
+import android.view.View;
+import android.content.Intent;
+
+public class AnalyzeScoresMetricsActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
 
     TextView highGameTextView;
     TextView highSeriesTextView;
@@ -31,11 +37,25 @@ public class AnalyzeScoresMetricsActivity extends AppCompatActivity {
 
     ArrayList<Integer> scoresList = new ArrayList<Integer>();
 
+    ImageButton activityMenuBtn;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_analyze_scores_metrics);
+
+        activityMenuBtn = (ImageButton) findViewById(R.id.menu_button);
+
+        activityMenuBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PopupMenu activityMenuPopup = new PopupMenu(AnalyzeScoresMetricsActivity.this, v);
+                activityMenuPopup.setOnMenuItemClickListener(AnalyzeScoresMetricsActivity.this);
+                activityMenuPopup.inflate(R.menu.activity_menu);
+                activityMenuPopup.show();
+            }
+        });
 
         highGameTextView = (TextView) findViewById(R.id.highGameActualTextView);
         highSeriesTextView = (TextView) findViewById(R.id.highSeriesActualTextView);
@@ -245,5 +265,48 @@ public class AnalyzeScoresMetricsActivity extends AppCompatActivity {
 
         return mostUsedBall;
 
+    }
+
+    public void openFindABallActivity() {
+        Intent intent = new Intent(this, FindABallActivity.class);
+        startActivity(intent);
+    }
+
+    public void openBuildArsenalActivity() {
+        Intent intent = new Intent(this, BuildArsenalPreferencesActivity.class);
+        startActivity(intent);
+    }
+
+    public void openHomeActivity() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    public void openLogScoresActivity() {
+        Intent intent = new Intent(this, LogScoresActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public boolean onMenuItemClick(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.goToHome:
+                openHomeActivity();
+                return true;
+            case R.id.goToBuildArsenal:
+                openBuildArsenalActivity();
+                return true;
+            case R.id.goToFindABall:
+                openFindABallActivity();
+                return true;
+            case R.id.goToLogScores:
+                openLogScoresActivity();
+                return true;
+            case R.id.goToAnalyzeScores:
+                return false;
+            default:
+                return false;
+        }
     }
 }

@@ -15,7 +15,13 @@ import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.data.LineData;
 
-public class AnalyzeScoresGraphsActivity extends AppCompatActivity {
+import androidx.appcompat.widget.PopupMenu;
+import android.widget.ImageButton;
+import android.view.MenuItem;
+import android.view.View;
+import android.content.Intent;
+
+public class AnalyzeScoresGraphsActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
 
     LineChart leagueLineChart;
 
@@ -24,11 +30,24 @@ public class AnalyzeScoresGraphsActivity extends AppCompatActivity {
 
     ArrayList<Integer> scoresList = new ArrayList<Integer>();
     List<Entry> entries = new ArrayList<Entry>();
+    ImageButton activityMenuBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_analyze_scores_graphs);
+
+        activityMenuBtn = (ImageButton) findViewById(R.id.menu_button);
+
+        activityMenuBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PopupMenu activityMenuPopup = new PopupMenu(AnalyzeScoresGraphsActivity.this, v);
+                activityMenuPopup.setOnMenuItemClickListener(AnalyzeScoresGraphsActivity.this);
+                activityMenuPopup.inflate(R.menu.activity_menu);
+                activityMenuPopup.show();
+            }
+        });
 
         leagueLineChart = (LineChart) findViewById(R.id.leagueLineChart);
 
@@ -88,6 +107,49 @@ public class AnalyzeScoresGraphsActivity extends AppCompatActivity {
         leagueLineChart.setExtraOffsets(10, 10, 10, 10);
         leagueLineChart.invalidate();
 
+    }
+
+    public void openFindABallActivity() {
+        Intent intent = new Intent(this, FindABallActivity.class);
+        startActivity(intent);
+    }
+
+    public void openBuildArsenalActivity() {
+        Intent intent = new Intent(this, BuildArsenalPreferencesActivity.class);
+        startActivity(intent);
+    }
+
+    public void openHomeActivity() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    public void openLogScoresActivity() {
+        Intent intent = new Intent(this, LogScoresActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public boolean onMenuItemClick(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.goToHome:
+                openHomeActivity();
+                return true;
+            case R.id.goToBuildArsenal:
+                openBuildArsenalActivity();
+                return true;
+            case R.id.goToFindABall:
+                openFindABallActivity();
+                return true;
+            case R.id.goToLogScores:
+                openLogScoresActivity();
+                return true;
+            case R.id.goToAnalyzeScores:
+                return false;
+            default:
+                return false;
+        }
     }
 
 }
