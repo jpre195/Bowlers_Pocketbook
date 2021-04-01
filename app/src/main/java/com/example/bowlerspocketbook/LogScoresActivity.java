@@ -14,6 +14,9 @@ import android.widget.TextView;
 import android.app.DatePickerDialog;
 import android.util.Log;
 import android.content.Context;
+import androidx.appcompat.widget.PopupMenu;
+import android.widget.ImageButton;
+import android.view.MenuItem;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -24,7 +27,7 @@ import java.util.Calendar;
 import java.io.*;
 import java.nio.charset.Charset;
 
-public class LogScoresActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class LogScoresActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener, PopupMenu.OnMenuItemClickListener {
 
     //Initialize variables
     Spinner spinner;
@@ -45,12 +48,26 @@ public class LogScoresActivity extends AppCompatActivity implements AdapterView.
 
     List<BowlingBall> bowlingBalls;
 
+    ImageButton activityMenuBtn;
+
     TextView toolbarTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_scores);
+
+        activityMenuBtn = (ImageButton) findViewById(R.id.menu_button);
+
+        activityMenuBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PopupMenu activityMenuPopup = new PopupMenu(LogScoresActivity.this, v);
+                activityMenuPopup.setOnMenuItemClickListener(LogScoresActivity.this);
+                activityMenuPopup.inflate(R.menu.activity_menu);
+                activityMenuPopup.show();
+            }
+        });
 
         toolbarTitle = (TextView) findViewById(R.id.toolbar_title);
         toolbarTitle.setText("Log Scores");
@@ -241,11 +258,6 @@ public class LogScoresActivity extends AppCompatActivity implements AdapterView.
             }
         }
 
-    public void openAnalyzeScoresActivity() {
-        Intent intent = new Intent(this, AnalyzeScoresMain.class);
-        startActivity(intent);
-    }
-
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         String text = parent.getItemAtPosition(position).toString();
@@ -255,5 +267,48 @@ public class LogScoresActivity extends AppCompatActivity implements AdapterView.
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
 
+    }
+
+    public void openFindABallActivity() {
+        Intent intent = new Intent(this, FindABallActivity.class);
+        startActivity(intent);
+    }
+
+    public void openBuildArsenalActivity() {
+        Intent intent = new Intent(this, BuildArsenalPreferencesActivity.class);
+        startActivity(intent);
+    }
+
+    public void openAnalyzeScoresActivity() {
+        Intent intent = new Intent(this, AnalyzeScoresMain.class);
+        startActivity(intent);
+    }
+
+    public void openHomeActivity() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public boolean onMenuItemClick(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.goToHome:
+                openHomeActivity();
+                return true;
+            case R.id.goToBuildArsenal:
+                openBuildArsenalActivity();
+                return true;
+            case R.id.goToFindABall:
+                openFindABallActivity();
+                return true;
+            case R.id.goToLogScores:
+                return false;
+            case R.id.goToAnalyzeScores:
+                openAnalyzeScoresActivity();
+                return true;
+            default:
+                return false;
+        }
     }
 }

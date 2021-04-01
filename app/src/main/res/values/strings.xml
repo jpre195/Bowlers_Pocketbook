@@ -11,9 +11,9 @@
         <item>Rev dominant</item>
     </string-array>
     <string-array name="release_position_array">
-        <item>Left</item>
+        <item>Left side (Right side for left-handers)</item>
         <item>Middle</item>
-        <item>Right</item>
+        <item>Right side (Left side for left-handers)</item>
     </string-array>
     <string-array name="ball_brands_array">
         <item>900 Global</item>

@@ -47,7 +47,7 @@
                 android:layout_marginBottom="30dp"
                 android:lines="2"
                 android:singleLine="false"
-                android:text="Please select \nyour play style:"
+                android:text="Select your play \nstyle:"
                 android:textSize="14sp"
                 app:layout_column="0"
                 app:layout_row="0" />

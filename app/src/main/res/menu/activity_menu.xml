@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/goToHome"
+        android:title="Home"
+        android:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/goToBuildArsenal"
+        android:title="Build Arsenal"
+        android:icon="@drawable/build_arsenal_logo"
+        android:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/goToFindABall"
+        android:title="Find a Ball"
+        android:icon="@drawable/find_a_ball_logo"
+        android:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/goToLogScores"
+        android:title="Log Scores"
+        android:icon="@drawable/log_scores_logo"
+        android:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/goToAnalyzeScores"
+        android:title="Analyze Scores"
+        android:icon="@drawable/analyze_scores_logo"
+        android:showAsAction="ifRoom"/>
+
+</menu>

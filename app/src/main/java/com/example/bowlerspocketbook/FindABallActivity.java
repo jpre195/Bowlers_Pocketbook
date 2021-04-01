@@ -4,6 +4,11 @@ import android.os.Bundle;
 import android.graphics.drawable.Drawable;
 import android.widget.Toast;
 import android.widget.TextView;
+import android.content.Intent;
+import android.view.View;
+import android.view.MenuItem;
+import androidx.appcompat.widget.PopupMenu;
+import android.widget.ImageButton;
 import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,7 +22,7 @@ import java.util.List;
 import java.io.*;
 import java.nio.charset.Charset;
 
-public class FindABallActivity extends AppCompatActivity {
+public class FindABallActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
 
     List<BowlingBall> bowlingBalls;
     ArrayList<String> brandList;
@@ -34,10 +39,24 @@ public class FindABallActivity extends AppCompatActivity {
 
     TextView toolbarTitle;
 
+    ImageButton activityMenuBtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_find_a_ball);
+
+        activityMenuBtn = (ImageButton) findViewById(R.id.menu_button);
+
+        activityMenuBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PopupMenu activityMenuPopup = new PopupMenu(FindABallActivity.this, v);
+                activityMenuPopup.setOnMenuItemClickListener(FindABallActivity.this);
+                activityMenuPopup.inflate(R.menu.activity_menu);
+                activityMenuPopup.show();
+            }
+        });
 
         toolbarTitle = (TextView) findViewById(R.id.toolbar_filter_title);
         toolbarTitle.setText("Find a Ball");
@@ -136,6 +155,49 @@ public class FindABallActivity extends AppCompatActivity {
         } catch(IOException e) {
             Log.wtf("LogScoresActivity", "Error reading data file on line " + line, e);
             e.printStackTrace();
+        }
+    }
+
+    public void openBuildArsenalActivity() {
+        Intent intent = new Intent(this, BuildArsenalPreferencesActivity.class);
+        startActivity(intent);
+    }
+
+    public void openAnalyzeScoresActivity() {
+        Intent intent = new Intent(this, AnalyzeScoresMain.class);
+        startActivity(intent);
+    }
+
+    public void openLogScoresActivity() {
+        Intent intent = new Intent(this, LogScoresActivity.class);
+        startActivity(intent);
+    }
+
+    public void openHomeActivity() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public boolean onMenuItemClick(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.goToHome:
+                openHomeActivity();
+                return true;
+            case R.id.goToBuildArsenal:
+                openBuildArsenalActivity();
+                return true;
+            case R.id.goToFindABall:
+                return false;
+            case R.id.goToLogScores:
+                openLogScoresActivity();
+                return true;
+            case R.id.goToAnalyzeScores:
+                openAnalyzeScoresActivity();
+                return true;
+            default:
+                return false;
         }
     }
 }

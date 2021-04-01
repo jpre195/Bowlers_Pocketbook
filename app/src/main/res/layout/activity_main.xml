@@ -34,9 +34,11 @@
                     android:id="@+id/buildArsenalBtn"
                     android:layout_width="175dp"
                     android:layout_height="150dp"
-                    android:text="Build \nArsenal"
-                    android:textSize="16sp"
+                    android:text="Build Arsenal"
+                    android:textSize="14sp"
                     android:background="@drawable/button_design"
+                    android:drawableTop="@drawable/build_arsenal_logo"
+                    android:drawablePadding="20dp"
                     android:textColor="#000000"
                     android:layout_margin="12dp"/>
 
@@ -44,10 +46,12 @@
                     android:id="@+id/findABallBtn"
                     android:layout_width="175dp"
                     android:layout_height="150dp"
-                    android:text="Find a \nBall"
+                    android:text="Find a Ball"
                     android:background="@drawable/button_design"
+                    android:drawableTop="@drawable/find_a_ball_logo"
+                    android:drawablePadding="20dp"
                     android:textColor="#000000"
-                    android:textSize="16sp"
+                    android:textSize="14sp"
                     android:layout_margin="12dp"/>
 
             </LinearLayout>
@@ -62,20 +66,24 @@
                     android:id="@+id/logScoresBtn"
                     android:layout_width="175dp"
                     android:layout_height="150dp"
-                    android:text="Log \nScores"
+                    android:text="Log Scores"
                     android:background="@drawable/button_design"
+                    android:drawableTop="@drawable/log_scores_logo"
+                    android:drawablePadding="20dp"
                     android:textColor="#000000"
-                    android:textSize="16sp"
+                    android:textSize="14sp"
                     android:layout_margin="12dp"/>
 
                 <Button
                     android:id="@+id/analyzeScoresBtn"
                     android:layout_width="175dp"
                     android:layout_height="150dp"
-                    android:text="Analyze \nScores"
+                    android:text="Analyze Scores"
                     android:background="@drawable/button_design"
+                    android:drawableTop="@drawable/analyze_scores_logo"
+                    android:drawablePadding="20dp"
                     android:textColor="#000000"
-                    android:textSize="16sp"
+                    android:textSize="14sp"
                     android:layout_margin="12dp"/>
 
             </LinearLayout>

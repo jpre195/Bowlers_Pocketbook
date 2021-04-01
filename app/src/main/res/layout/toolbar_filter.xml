@@ -10,10 +10,11 @@
         android:background="#554eff"
         android:padding="16dp">
 
-        <ImageView
+        <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/menu_logo"
+            android:background="#554eff"
             android:layout_centerVertical="true"
             android:id="@+id/menu_button"/>
 
@@ -28,10 +29,11 @@
             android:layout_centerVertical="true"
             android:id="@+id/toolbar_filter_title"/>
 
-        <ImageView
+        <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/filter_logo"
+            android:background="#554eff"
             android:layout_centerVertical="true"
             android:layout_alignParentEnd="true"
             android:id="@+id/filter_button"/>
