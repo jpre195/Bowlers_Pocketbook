@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#554eff"
+        android:padding="16dp">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/menu_logo"
+            android:background="#554eff"
+            android:layout_centerVertical="true"
+            android:id="@+id/menu_button"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bowler's Pocketbook"
+            android:textSize="20sp"
+            android:textColor="#ffffff"
+            android:layout_marginStart="16dp"
+            android:layout_toEndOf="@id/menu_button"
+            android:layout_centerVertical="true"
+            android:id="@+id/toolbar_filter_title"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#554eff"
+            android:src="@drawable/search_logo"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/filter_button"
+            android:layout_marginRight="10dp"/>
+
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/filter_logo"
+            android:background="#554eff"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/filter_button"/>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
