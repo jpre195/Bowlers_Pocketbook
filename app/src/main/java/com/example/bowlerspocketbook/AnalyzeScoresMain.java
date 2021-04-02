@@ -19,7 +19,7 @@ public class AnalyzeScoresMain extends TabActivity {
 
         //Scores list activity
         Intent scoresListActivityIntent = new Intent().setClass(this, AnalyzeScoresActivity.class);
-        TabSpec tabSpecAnalyzeScores = tabHost.newTabSpec("Scores List").setIndicator("Scores List").setContent(scoresListActivityIntent);
+        TabSpec tabSpecAnalyzeScores = tabHost.newTabSpec("Scores").setIndicator("Scores").setContent(scoresListActivityIntent);
 
         //Scores metrics activity
         Intent scoresMetricsActivityIntent = new Intent().setClass(this, AnalyzeScoresMetricsActivity.class);

@@ -17,6 +17,7 @@ import com.github.mikephil.charting.data.LineData;
 
 import androidx.appcompat.widget.PopupMenu;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.view.MenuItem;
 import android.view.View;
 import android.content.Intent;
@@ -31,6 +32,8 @@ public class AnalyzeScoresGraphsActivity extends AppCompatActivity implements Po
     ArrayList<Integer> scoresList = new ArrayList<Integer>();
     List<Entry> entries = new ArrayList<Entry>();
     ImageButton activityMenuBtn;
+
+    TextView toolbarTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +51,9 @@ public class AnalyzeScoresGraphsActivity extends AppCompatActivity implements Po
                 activityMenuPopup.show();
             }
         });
+
+        toolbarTitle = (TextView) findViewById(R.id.toolbar_title);
+        toolbarTitle.setText("Analyze Scores");
 
         leagueLineChart = (LineChart) findViewById(R.id.leagueLineChart);
 

@@ -39,6 +39,8 @@ public class AnalyzeScoresMetricsActivity extends AppCompatActivity implements P
 
     ImageButton activityMenuBtn;
 
+    TextView toolbarTitle;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +58,9 @@ public class AnalyzeScoresMetricsActivity extends AppCompatActivity implements P
                 activityMenuPopup.show();
             }
         });
+
+        toolbarTitle = (TextView) findViewById(R.id.toolbar_title);
+        toolbarTitle.setText("Analyze Scores");
 
         highGameTextView = (TextView) findViewById(R.id.highGameActualTextView);
         highSeriesTextView = (TextView) findViewById(R.id.highSeriesActualTextView);

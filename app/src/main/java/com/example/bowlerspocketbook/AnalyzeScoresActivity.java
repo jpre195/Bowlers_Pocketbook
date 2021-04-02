@@ -13,6 +13,7 @@ import android.widget.ImageButton;
 import android.view.MenuItem;
 import android.view.View;
 import android.content.Intent;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.io.*;
@@ -40,6 +41,8 @@ public class AnalyzeScoresActivity extends AppCompatActivity implements PopupMen
     ArrayList<Integer> gameList = new ArrayList<Integer>();
     ArrayList<Integer> ballImages = new ArrayList<Integer>();
 
+    TextView toolbarTitle;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,6 +59,9 @@ public class AnalyzeScoresActivity extends AppCompatActivity implements PopupMen
                 activityMenuPopup.show();
             }
         });
+
+        toolbarTitle = (TextView) findViewById(R.id.toolbar_title);
+        toolbarTitle.setText("Analyze Scores");
 
         //Initialize DatabaseHelper
         databaseHelper = new DatabaseHelper(AnalyzeScoresActivity.this);
