@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:title="Filter by:"
+        android:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/filterByBrand"
+        android:title="Brand"
+        android:showAsAction="ifRoom">
+
+        <menu>
+
+            <item
+                android:id="@+id/filter900Global"
+                android:title="900 Global"
+                android:showAsAction="ifRoom"
+                android:checkable="true"/>
+
+        </menu>
+
+    </item>
+
+</menu>

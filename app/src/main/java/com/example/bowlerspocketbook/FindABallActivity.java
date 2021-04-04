@@ -40,6 +40,7 @@ public class FindABallActivity extends AppCompatActivity implements PopupMenu.On
     TextView toolbarTitle;
 
     ImageButton activityMenuBtn;
+    ImageButton filterMenuBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +56,18 @@ public class FindABallActivity extends AppCompatActivity implements PopupMenu.On
                 activityMenuPopup.setOnMenuItemClickListener(FindABallActivity.this);
                 activityMenuPopup.inflate(R.menu.activity_menu);
                 activityMenuPopup.show();
+            }
+        });
+
+        filterMenuBtn = (ImageButton) findViewById(R.id.filter_button);
+
+        filterMenuBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PopupMenu filterMenuPopup = new PopupMenu(FindABallActivity.this, v);
+                filterMenuPopup.setOnMenuItemClickListener(FindABallActivity.this);
+                filterMenuPopup.inflate(R.menu.filter_menu);
+                filterMenuPopup.show();
             }
         });
 

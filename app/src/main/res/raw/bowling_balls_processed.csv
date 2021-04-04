@@ -39,6 +39,7 @@ Twist Sky Blue/Pink/Snow,Brunswick,Symmetric,Pearl,0.018,2.591,244.1
 Vapor Zone Hybrid,Brunswick,Asymmetric,Hybrid,0.048,2.478,196.8
 Vintage Vapor Zone Solid,Brunswick,Asymmetric,Solid,0.048,2.478,193.8
 Zenith,Brunswick,Asymmetric,Solid,0.052,2.485,190.5
+Zenith Pearl,Brunswick,Asymmetric,Pearl,0.052,2.485,199.5
 Authority,Columbia 300,Asymmetric,Pearl,0.05,2.503,203.3
 Authority Solid,Columbia 300,Asymmetric,Solid,0.05,2.503,194.3
 Beast Black/Pink/Purple Hybrid,Columbia 300,Symmetric,Hybrid,0.033,2.54,218
@@ -48,6 +49,7 @@ Beast Purple Sparkle,Columbia 300,Symmetric,Pearl,0.035,2.54,222
 Chaos Black,Columbia 300,Symmetric,Solid,0.054,2.48,188
 Command,Columbia 300,Asymmetric,Pearl,0.053,2.513,201.3
 Dynamic Swing,Columbia 300,Asymmetric,Hybrid,0.047,2.482,198.2
+Dynamic Swing Pearl,Columbia 300,Asymmetric,Pearl,0.047,2.482,204.2
 Outlook Solid,Columbia 300,Symmetric,Solid,0.047,2.533,200.3
 Saber Pearl,Columbia 300,Asymmetric,Pearl,0.054,2.5,199
 Damn Good Verge,DV8,Symmetric,Solid,0.037,2.467,203.7
@@ -74,6 +76,7 @@ Choice Red/Gold/Blue -,Ebonite,Asymmetric,Hybrid,0.054,2.49,192
 Destiny Pearl Black/Red/Blue,Ebonite,Symmetric,Pearl,0.053,2.53,203
 Destiny Solid Magenta,Ebonite,Symmetric,Solid,0.053,2.53,194
 Futura,Ebonite,Symmetric,Hybrid,0.053,2.48,192
+Game Breaker 4,Ebonite,Symmetric,Solid,0.048,2.48,194
 Omni Hybrid,Ebonite,Asymmetric,Hybrid,0.05,2.501,197.1
 Pivot Assault -,Ebonite,Asymmetric,Solid,0.049,2.48,193
 Stinger Hybrid,Ebonite,Symmetric,Hybrid,0.035,2.517,213.7
@@ -102,7 +105,9 @@ Jackal Flash,Motiv,Asymmetric,Pearl,0.054,2.47,196
 Jackal Legacy,Motiv,Asymmetric,Solid,0.054,2.47,187
 Primal Rage 5-Year Anniversary LE,Motiv,Symmetric,Pearl,0.05,2.55,208
 Primal Rage 5-Year Anniversary LE -,Motiv,Symmetric,Pearl,0.05,2.55,208
+Purple Tank,Motiv,Symmetric,Urethane,0.015,2.57,248
 Ripcord Flight,Motiv,Symmetric,Solid,0.047,2.53,200
+Trident Horizon,Motiv,Asymmetric,Hybrid,0.049,2.52,200
 Trident Nemesis,Motiv,Asymmetric,Pearl,0.049,2.52,206
 Villain Scorn,Motiv,Asymmetric,Pearl,0.051,2.54,206
 Villain Scorn 5,Motiv,Asymmetric,Pearl,0.051,2.54,206
@@ -112,7 +117,9 @@ Bonus Pearl,Radical,Symmetric,Pearl,0.03,2.487,221.7
 Counter Attack Pearl,Radical,Symmetric,Pearl,0.023,2.562,236.2
 Counter Attack Solid,Radical,Symmetric,Solid,0.023,2.562,227.2
 Incognito,Radical,Asymmetric,Solid,0.053,2.487,189.7
+Incognito Pearl,Radical,Asymmetric,Pearl,0.053,2.487,198.7
 Pandemonium,Radical,Symmetric,Pearl,0.053,2.487,198.7
+Pandemonium Solid,Radical,Symmetric,Solid,0.053,2.487,189.7
 Results Plus,Radical,Asymmetric,Pearl,0.044,2.517,210.7
 Results Solid,Radical,Asymmetric,Solid,0.044,2.517,201.7
 Zing! Pearl,Radical,Asymmetric,Pearl,0.051,2.499,201.9
@@ -161,6 +168,7 @@ Mix Royal/Cherry,Storm,Symmetric,Urethane,0.006,2.69,269
 Mix Sky/Cobalt/Violet,Storm,Symmetric,Urethane,0.006,2.69,269
 Omega Crux,Storm,Asymmetric,Pearl,0.051,2.5,202
 Parallax,Storm,Asymmetric,Hybrid,0.054,2.52,195
+Parallax Effect,Storm,Asymmetric,Pearl,0.054,2.52,201
 Phaze II,Storm,Symmetric,Solid,0.051,2.48,191
 Phaze III,Storm,Symmetric,Hybrid,0.051,2.48,194
 Pitch Black,Storm,Symmetric,Urethane,0.022,2.57,241
@@ -177,6 +185,7 @@ Tropical Surge Teal/Blue,Storm,Symmetric,Pearl,0.024,2.58,237
 Tropical Surge Violet/Charcoal,Storm,Symmetric,Pearl,0.024,2.58,237
 Tropical Surge Yellow/Black,Storm,Symmetric,Pearl,0.024,2.58,237
 Heat Lava,Track,Symmetric,Pearl,0.038,2.5,215
+Kinetic Platinum,Track,Asymmetric,Pearl,0.04,2.48,211
 Latitude Pearl,Track,Symmetric,Pearl,0.045,2.511,209.1
 Paradox V,Track,Asymmetric,Pearl,0.057,2.48,194
 Proof Hybrid,Track,Asymmetric,Hybrid,0.052,2.519,196.9
