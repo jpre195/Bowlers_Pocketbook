@@ -12,14 +12,171 @@
 
         <menu>
 
-            <item
-                android:id="@+id/filter900Global"
-                android:title="900 Global"
-                android:showAsAction="ifRoom"
-                android:checkable="true"/>
+            <group
+                android:checkableBehavior="all">
+
+                <item
+                    android:id="@+id/filter900Global"
+                    android:title="900 Global"
+                    android:showAsAction="always|withText"
+                    android:checkable="true"/>
+
+                <item
+                    android:id="@+id/filterBrunswick"
+                    android:title="Brunswick"
+                    android:showAsAction="always|withText"
+                    android:checkable="true"/>
+
+                <item
+                    android:id="@+id/filterColumbia300"
+                    android:title="Columbia 300"
+                    android:showAsAction="always|withText"
+                    android:checkable="true"/>
+
+                <item
+                    android:id="@+id/filterDV8"
+                    android:title="DV8"
+                    android:showAsAction="always|withText"
+                    android:checkable="true"/>
+
+                <item
+                    android:id="@+id/filterEbonite"
+                    android:title="Ebonite"
+                    android:showAsAction="always|withText"
+                    android:checkable="true"/>
+
+                <item
+                    android:id="@+id/filterHammer"
+                    android:title="Hammer"
+                    android:showAsAction="always|withText"
+                    android:checkable="true"/>
+
+                <item
+                    android:id="@+id/filterMotiv"
+                    android:title="Motiv"
+                    android:showAsAction="always|withText"
+                    android:checkable="true"/>
+
+                <item
+                    android:id="@+id/filterRadical"
+                    android:title="Radical"
+                    android:showAsAction="always|withText"
+                    android:checkable="true"/>
+
+                <item
+                    android:id="@+id/filterRotoGrip"
+                    android:title="Roto Grip"
+                    android:showAsAction="always|withText"
+                    android:checkable="true"/>
+
+                <item
+                    android:id="@+id/filterStorm"
+                    android:title="Storm"
+                    android:showAsAction="always|withText"
+                    android:checkable="true"/>
+
+                <item
+                    android:id="@+id/filterTrack"
+                    android:title="Track"
+                    android:showAsAction="always|withText"
+                    android:checkable="true"/>
+
+            </group>
 
         </menu>
 
     </item>
+
+    <item
+        android:id="@+id/filterByCore"
+        android:title="Core"
+        android:showAsAction="ifRoom">
+
+        <menu>
+
+            <group
+                android:checkableBehavior="all">
+
+                <item
+                    android:id="@+id/filterAsymmetrical"
+                    android:title="Asymmetrical"
+                    android:showAsAction="always|withText"
+                    android:checkable="true"/>
+
+                <item
+                    android:id="@+id/filterSymmetrical"
+                    android:title="Symmetrical"
+                    android:showAsAction="always|withText"
+                    android:checkable="true"/>
+
+
+
+            </group>
+
+        </menu>
+
+    </item>
+
+    <item
+        android:id="@+id/filterByCoverstock"
+        android:title="Coverstock"
+        android:showAsAction="ifRoom">
+
+        <menu>
+
+            <group
+                android:checkableBehavior="all">
+
+                <item
+                    android:id="@+id/filterSolid"
+                    android:title="Solid"
+                    android:showAsAction="always|withText"
+                    android:checkable="true"/>
+
+                <item
+                    android:id="@+id/filterHybrid"
+                    android:title="Hybrid"
+                    android:showAsAction="always|withText"
+                    android:checkable="true"/>
+
+                <item
+                    android:id="@+id/filterPearl"
+                    android:title="Pearl"
+                    android:showAsAction="always|withText"
+                    android:checkable="true"/>
+
+                <item
+                    android:id="@+id/filterUrethane"
+                    android:title="Urethane"
+                    android:showAsAction="always|withText"
+                    android:checkable="true"/>
+
+
+            </group>
+
+        </menu>
+
+    </item>
+
+    <item
+        android:title="Sort by:"
+        android:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/sortByDifferential"
+        android:title="Differential"
+        android:showAsAction="always|withText" />
+
+    <item
+        android:id="@+id/sortByRG"
+        android:title="RG"
+        android:showAsAction="always|withText" />
+
+    <item
+        android:id="@+id/sortByTotalHook"
+        android:title="Total Hook"
+        android:showAsAction="always|withText" />
+
+
 
 </menu>
