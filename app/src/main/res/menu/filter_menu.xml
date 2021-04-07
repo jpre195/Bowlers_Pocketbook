@@ -18,68 +18,57 @@
                 <item
                     android:id="@+id/filter900Global"
                     android:title="900 Global"
-                    android:showAsAction="always|withText"
-                    android:checkable="true"/>
+                    android:showAsAction="always|withText"/>
 
                 <item
                     android:id="@+id/filterBrunswick"
                     android:title="Brunswick"
-                    android:showAsAction="always|withText"
-                    android:checkable="true"/>
+                    android:showAsAction="always|withText"/>
 
                 <item
                     android:id="@+id/filterColumbia300"
                     android:title="Columbia 300"
-                    android:showAsAction="always|withText"
-                    android:checkable="true"/>
+                    android:showAsAction="always|withText"/>
 
                 <item
                     android:id="@+id/filterDV8"
                     android:title="DV8"
-                    android:showAsAction="always|withText"
-                    android:checkable="true"/>
+                    android:showAsAction="always|withText"/>
 
                 <item
                     android:id="@+id/filterEbonite"
                     android:title="Ebonite"
-                    android:showAsAction="always|withText"
-                    android:checkable="true"/>
+                    android:showAsAction="always|withText"/>
 
                 <item
                     android:id="@+id/filterHammer"
                     android:title="Hammer"
-                    android:showAsAction="always|withText"
-                    android:checkable="true"/>
+                    android:showAsAction="always|withText"/>
 
                 <item
                     android:id="@+id/filterMotiv"
                     android:title="Motiv"
-                    android:showAsAction="always|withText"
-                    android:checkable="true"/>
+                    android:showAsAction="always|withText"/>
 
                 <item
                     android:id="@+id/filterRadical"
                     android:title="Radical"
-                    android:showAsAction="always|withText"
-                    android:checkable="true"/>
+                    android:showAsAction="always|withText" />
 
                 <item
                     android:id="@+id/filterRotoGrip"
                     android:title="Roto Grip"
-                    android:showAsAction="always|withText"
-                    android:checkable="true"/>
+                    android:showAsAction="always|withText" />
 
                 <item
                     android:id="@+id/filterStorm"
                     android:title="Storm"
-                    android:showAsAction="always|withText"
-                    android:checkable="true"/>
+                    android:showAsAction="always|withText"/>
 
                 <item
                     android:id="@+id/filterTrack"
                     android:title="Track"
-                    android:showAsAction="always|withText"
-                    android:checkable="true"/>
+                    android:showAsAction="always|withText"/>
 
             </group>
 

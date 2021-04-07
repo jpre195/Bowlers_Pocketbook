@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.core.content.ContextCompat;
+import androidx.core.view.MenuItemCompat;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -64,8 +65,35 @@ public class FindABallActivity extends AppCompatActivity implements PopupMenu.On
         filterMenuBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PopupMenu filterMenuPopup = new PopupMenu(FindABallActivity.this, v);
+                final PopupMenu filterMenuPopup = new PopupMenu(FindABallActivity.this, v);
                 filterMenuPopup.setOnMenuItemClickListener(FindABallActivity.this);
+
+
+//                filterMenuPopup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+//                    @Override
+//                    public boolean onMenuItemClick(MenuItem item) {
+//
+//                        item.setChecked(!item.isChecked());
+//
+//                        item.setShowAsAction(MenuItem.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW);
+////                        item.setActionView(new View(context));
+//                        MenuItemCompat.setOnActionExpandListener(item, new MenuItemCompat.OnActionExpandListener() {
+//                            @Override
+//                            public boolean onMenuItemActionExpand(MenuItem item) {
+//                                return false;
+//                            }
+//
+//                            @Override
+//                            public boolean onMenuItemActionCollapse(MenuItem item) {
+//                                return false;
+//                            }
+//                        });
+////                        filterMenuPopup.show();
+//                        return false;
+//                    }
+//                });
+
+
                 filterMenuPopup.inflate(R.menu.filter_menu);
                 filterMenuPopup.show();
             }
@@ -209,8 +237,213 @@ public class FindABallActivity extends AppCompatActivity implements PopupMenu.On
             case R.id.goToAnalyzeScores:
                 openAnalyzeScoresActivity();
                 return true;
+            case R.id.filterByBrand:
+                return false;
+            case R.id.filter900Global:
+                item.setChecked(!item.isChecked());
+
+                item.setShowAsAction(MenuItem.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW);
+//                        item.setActionView(new View(context));
+                MenuItemCompat.setOnActionExpandListener(item, new MenuItemCompat.OnActionExpandListener() {
+                    @Override
+                    public boolean onMenuItemActionExpand(MenuItem item) {
+                        return false;
+                    }
+
+                    @Override
+                    public boolean onMenuItemActionCollapse(MenuItem item) {
+                        return false;
+                    }
+                });
+//                        filterMenuPopup.show();
+                return false;
+            case R.id.filterBrunswick:
+                item.setChecked(!item.isChecked());
+
+                item.setShowAsAction(MenuItem.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW);
+//                        item.setActionView(new View(context));
+                MenuItemCompat.setOnActionExpandListener(item, new MenuItemCompat.OnActionExpandListener() {
+                    @Override
+                    public boolean onMenuItemActionExpand(MenuItem item) {
+                        return false;
+                    }
+
+                    @Override
+                    public boolean onMenuItemActionCollapse(MenuItem item) {
+                        return false;
+                    }
+                });
+//                        filterMenuPopup.show();
+                return false;
+            case R.id.filterColumbia300:
+                item.setChecked(!item.isChecked());
+
+                item.setShowAsAction(MenuItem.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW);
+//                        item.setActionView(new View(context));
+                MenuItemCompat.setOnActionExpandListener(item, new MenuItemCompat.OnActionExpandListener() {
+                    @Override
+                    public boolean onMenuItemActionExpand(MenuItem item) {
+                        return false;
+                    }
+
+                    @Override
+                    public boolean onMenuItemActionCollapse(MenuItem item) {
+                        return false;
+                    }
+                });
+//                        filterMenuPopup.show();
+                return false;
+            case R.id.filterDV8:
+                item.setChecked(!item.isChecked());
+
+                item.setShowAsAction(MenuItem.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW);
+//                        item.setActionView(new View(context));
+                MenuItemCompat.setOnActionExpandListener(item, new MenuItemCompat.OnActionExpandListener() {
+                    @Override
+                    public boolean onMenuItemActionExpand(MenuItem item) {
+                        return false;
+                    }
+
+                    @Override
+                    public boolean onMenuItemActionCollapse(MenuItem item) {
+                        return false;
+                    }
+                });
+//                        filterMenuPopup.show();
+                return false;
+            case R.id.filterEbonite:
+                item.setChecked(!item.isChecked());
+
+                item.setShowAsAction(MenuItem.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW);
+//                        item.setActionView(new View(context));
+                MenuItemCompat.setOnActionExpandListener(item, new MenuItemCompat.OnActionExpandListener() {
+                    @Override
+                    public boolean onMenuItemActionExpand(MenuItem item) {
+                        return false;
+                    }
+
+                    @Override
+                    public boolean onMenuItemActionCollapse(MenuItem item) {
+                        return false;
+                    }
+                });
+//                        filterMenuPopup.show();
+                return false;
+            case R.id.filterHammer:
+                item.setChecked(!item.isChecked());
+
+                item.setShowAsAction(MenuItem.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW);
+//                        item.setActionView(new View(context));
+                MenuItemCompat.setOnActionExpandListener(item, new MenuItemCompat.OnActionExpandListener() {
+                    @Override
+                    public boolean onMenuItemActionExpand(MenuItem item) {
+                        return false;
+                    }
+
+                    @Override
+                    public boolean onMenuItemActionCollapse(MenuItem item) {
+                        return false;
+                    }
+                });
+//                        filterMenuPopup.show();
+                return false;
+            case R.id.filterMotiv:
+                item.setChecked(!item.isChecked());
+
+                item.setShowAsAction(MenuItem.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW);
+//                        item.setActionView(new View(context));
+                MenuItemCompat.setOnActionExpandListener(item, new MenuItemCompat.OnActionExpandListener() {
+                    @Override
+                    public boolean onMenuItemActionExpand(MenuItem item) {
+                        return false;
+                    }
+
+                    @Override
+                    public boolean onMenuItemActionCollapse(MenuItem item) {
+                        return false;
+                    }
+                });
+//                        filterMenuPopup.show();
+                return false;
+            case R.id.filterRadical:
+                item.setChecked(!item.isChecked());
+
+                item.setShowAsAction(MenuItem.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW);
+//                        item.setActionView(new View(context));
+                MenuItemCompat.setOnActionExpandListener(item, new MenuItemCompat.OnActionExpandListener() {
+                    @Override
+                    public boolean onMenuItemActionExpand(MenuItem item) {
+                        return false;
+                    }
+
+                    @Override
+                    public boolean onMenuItemActionCollapse(MenuItem item) {
+                        return false;
+                    }
+                });
+//                        filterMenuPopup.show();
+                return false;
+            case R.id.filterRotoGrip:
+                item.setChecked(!item.isChecked());
+
+                item.setShowAsAction(MenuItem.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW);
+//                        item.setActionView(new View(context));
+                MenuItemCompat.setOnActionExpandListener(item, new MenuItemCompat.OnActionExpandListener() {
+                    @Override
+                    public boolean onMenuItemActionExpand(MenuItem item) {
+                        return false;
+                    }
+
+                    @Override
+                    public boolean onMenuItemActionCollapse(MenuItem item) {
+                        return false;
+                    }
+                });
+//                        filterMenuPopup.show();
+                return false;
+            case R.id.filterStorm:
+                item.setChecked(!item.isChecked());
+
+                item.setShowAsAction(MenuItem.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW);
+//                        item.setActionView(new View(context));
+                MenuItemCompat.setOnActionExpandListener(item, new MenuItemCompat.OnActionExpandListener() {
+                    @Override
+                    public boolean onMenuItemActionExpand(MenuItem item) {
+                        return false;
+                    }
+
+                    @Override
+                    public boolean onMenuItemActionCollapse(MenuItem item) {
+                        return false;
+                    }
+                });
+//                        filterMenuPopup.show();
+                return false;
+            case R.id.filterTrack:
+                item.setChecked(!item.isChecked());
+
+                item.setShowAsAction(MenuItem.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW);
+//                        item.setActionView(new View(context));
+                MenuItemCompat.setOnActionExpandListener(item, new MenuItemCompat.OnActionExpandListener() {
+                    @Override
+                    public boolean onMenuItemActionExpand(MenuItem item) {
+                        return false;
+                    }
+
+                    @Override
+                    public boolean onMenuItemActionCollapse(MenuItem item) {
+                        return false;
+                    }
+                });
+//                        filterMenuPopup.show();
+                return false;
             default:
                 return false;
         }
     }
+
+//    public boolean checkBoxClick(MenuItem item) {
+//        item.setChecked(!item.isChecked());
+//        return false;
+//    }
 }
