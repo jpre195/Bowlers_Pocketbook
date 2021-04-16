@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D2777F9F2614886D0029C9C6 /* Bowler_s_PocketbookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2777F9E2614886D0029C9C6 /* Bowler_s_PocketbookApp.swift */; };
-		D2777FA12614886D0029C9C6 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2777FA02614886D0029C9C6 /* MainView.swift */; };
+		D2777FA12614886D0029C9C6 /* BuildArsenalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2777FA02614886D0029C9C6 /* BuildArsenalView.swift */; };
 		D2777FA32614886D0029C9C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2777FA22614886D0029C9C6 /* Assets.xcassets */; };
 		D2777FA62614886D0029C9C6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2777FA52614886D0029C9C6 /* Preview Assets.xcassets */; };
 		D2BC043126245ABE00AE99E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2BC043026245ABE00AE99E8 /* Main.storyboard */; };
@@ -18,7 +18,7 @@
 /* Begin PBXFileReference section */
 		D2777F9B2614886D0029C9C6 /* Bowler's Pocketbook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bowler's Pocketbook.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2777F9E2614886D0029C9C6 /* Bowler_s_PocketbookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bowler_s_PocketbookApp.swift; sourceTree = "<group>"; };
-		D2777FA02614886D0029C9C6 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		D2777FA02614886D0029C9C6 /* BuildArsenalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildArsenalView.swift; sourceTree = "<group>"; };
 		D2777FA22614886D0029C9C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D2777FA52614886D0029C9C6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D2777FA72614886D0029C9C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -57,8 +57,8 @@
 			isa = PBXGroup;
 			children = (
 				D2777F9E2614886D0029C9C6 /* Bowler_s_PocketbookApp.swift */,
-				D2777FA02614886D0029C9C6 /* MainView.swift */,
 				D2BC0448262A1C5200AE99E8 /* HomeView.swift */,
+				D2777FA02614886D0029C9C6 /* BuildArsenalView.swift */,
 				D2BC043026245ABE00AE99E8 /* Main.storyboard */,
 				D2777FA22614886D0029C9C6 /* Assets.xcassets */,
 				D2777FA72614886D0029C9C6 /* Info.plist */,
@@ -146,7 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2BC0449262A1C5300AE99E8 /* HomeView.swift in Sources */,
-				D2777FA12614886D0029C9C6 /* MainView.swift in Sources */,
+				D2777FA12614886D0029C9C6 /* BuildArsenalView.swift in Sources */,
 				D2777F9F2614886D0029C9C6 /* Bowler_s_PocketbookApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
