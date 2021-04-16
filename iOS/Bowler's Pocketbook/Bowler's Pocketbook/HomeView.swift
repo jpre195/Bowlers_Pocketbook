@@ -11,14 +11,17 @@ struct HomeView: View {
     
     var body: some View {
         VStack {
-            HStack {
-                Button("Build Arsenal") {
-                    Text("Hello world")
-                }.padding(24)
+            Text("Bowler's Pocketbook").font(.title).bold()
+            Spacer()
             
+            HStack {
+                
+                Button("Build Arsenal") {
+                    
+                }.padding(24)
                 
                 Button("Find a Ball") {
-                    Text("Find a Ball")
+
                 }.padding(24)
             }
             
@@ -31,6 +34,8 @@ struct HomeView: View {
                     Text("Analyze Scores")
                 }.padding(24)
             }
+            
+            Spacer()
         }
         
     }

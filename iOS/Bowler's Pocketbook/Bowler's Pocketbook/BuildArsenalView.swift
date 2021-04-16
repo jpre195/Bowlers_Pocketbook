@@ -10,7 +10,13 @@ import SwiftUI
 struct BuildArsenalView: View {
     
     var body: some View {
-        Text("Hello")
+
+        VStack {
+            HStack {
+                Text("Build Arsenal View").bold().font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+            }
+            Spacer()
+        }
         
     }
 }
