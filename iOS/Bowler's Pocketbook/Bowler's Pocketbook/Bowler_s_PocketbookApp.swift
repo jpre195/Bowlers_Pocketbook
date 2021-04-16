@@ -11,7 +11,7 @@ import SwiftUI
 struct Bowler_s_PocketbookApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
         }
     }
 }
