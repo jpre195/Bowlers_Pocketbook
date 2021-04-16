@@ -15,7 +15,7 @@ struct Bowler_s_PocketbookApp: App {
                 BuildArsenalView().tabItem {
                     Label("Build Arsenal", systemImage: "gauge")
                 }.tag(1)
-                Text("Tab Content 2").tabItem {
+                FindABallView().tabItem {
                     Label("Find a Ball", systemImage: "magnifyingglass")
                 }.tag(2)
                 HomeView().tabItem {

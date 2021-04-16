@@ -13,6 +13,7 @@
 		D2777FA62614886D0029C9C6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2777FA52614886D0029C9C6 /* Preview Assets.xcassets */; };
 		D2BC043126245ABE00AE99E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2BC043026245ABE00AE99E8 /* Main.storyboard */; };
 		D2BC0449262A1C5300AE99E8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BC0448262A1C5200AE99E8 /* HomeView.swift */; };
+		D2BC044F262A45EF00AE99E8 /* FindABallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BC044E262A45EF00AE99E8 /* FindABallView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		D2777FA72614886D0029C9C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2BC043026245ABE00AE99E8 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		D2BC0448262A1C5200AE99E8 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		D2BC044E262A45EF00AE99E8 /* FindABallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindABallView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				D2777F9E2614886D0029C9C6 /* Bowler_s_PocketbookApp.swift */,
 				D2BC0448262A1C5200AE99E8 /* HomeView.swift */,
 				D2777FA02614886D0029C9C6 /* BuildArsenalView.swift */,
+				D2BC044E262A45EF00AE99E8 /* FindABallView.swift */,
 				D2BC043026245ABE00AE99E8 /* Main.storyboard */,
 				D2777FA22614886D0029C9C6 /* Assets.xcassets */,
 				D2777FA72614886D0029C9C6 /* Info.plist */,
@@ -147,6 +150,7 @@
 			files = (
 				D2BC0449262A1C5300AE99E8 /* HomeView.swift in Sources */,
 				D2777FA12614886D0029C9C6 /* BuildArsenalView.swift in Sources */,
+				D2BC044F262A45EF00AE99E8 /* FindABallView.swift in Sources */,
 				D2777F9F2614886D0029C9C6 /* Bowler_s_PocketbookApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
