@@ -13,7 +13,7 @@ struct BuildArsenalView: View {
 
         VStack {
             HStack {
-                Text("Build Arsenal View").bold().font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                Text("Build Arsenal").bold().font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
             }
             Spacer()
         }
