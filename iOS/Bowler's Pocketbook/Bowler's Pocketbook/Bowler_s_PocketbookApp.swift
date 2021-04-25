@@ -13,7 +13,7 @@ struct Bowler_s_PocketbookApp: App {
         WindowGroup {
             TabView {
                 BuildArsenalView().tabItem {
-                    Label("Build Arsenal", systemImage: "gauge")
+                    Label("Build Arsenal", systemImage: "hammer")
                 }.tag(1)
                 FindABallView().tabItem {
                     Label("Find a Ball", systemImage: "magnifyingglass")
@@ -22,11 +22,11 @@ struct Bowler_s_PocketbookApp: App {
 //                    Image(systemName: "house.fill").font(.system(size: 44, weight: .bold)).foregroundColor(.red)
                     Label("Home", systemImage: "house.fill").foregroundColor(.red)
                 }.tag(3)
-                Text("Tab Content 4").tabItem {
+                LogScoresView().tabItem {
                     Label("Log Scores", systemImage:"archivebox")
                 }.tag(4)
-                Text("Tab Content 5").tabItem {
-                    Label("Analyze Scores", systemImage: "gear")
+                AnalyzeScoresView().tabItem {
+                    Label("Analyze Scores", systemImage: "gauge")
                 }.tag(5)
             }
         }
