@@ -16,6 +16,7 @@
 		D2BC044F262A45EF00AE99E8 /* FindABallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BC044E262A45EF00AE99E8 /* FindABallView.swift */; };
 		D2BC04532636355800AE99E8 /* LogScoresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BC04522636355800AE99E8 /* LogScoresView.swift */; };
 		D2BC04572636366E00AE99E8 /* AnalyzeScoresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BC04562636366E00AE99E8 /* AnalyzeScoresView.swift */; };
+		D2BC045F263ABFE600AE99E8 /* TextLimiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BC045E263ABFE600AE99E8 /* TextLimiter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		D2BC044E262A45EF00AE99E8 /* FindABallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindABallView.swift; sourceTree = "<group>"; };
 		D2BC04522636355800AE99E8 /* LogScoresView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogScoresView.swift; sourceTree = "<group>"; };
 		D2BC04562636366E00AE99E8 /* AnalyzeScoresView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzeScoresView.swift; sourceTree = "<group>"; };
+		D2BC045E263ABFE600AE99E8 /* TextLimiter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextLimiter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				D2777FA02614886D0029C9C6 /* BuildArsenalView.swift */,
 				D2BC044E262A45EF00AE99E8 /* FindABallView.swift */,
 				D2BC04522636355800AE99E8 /* LogScoresView.swift */,
+				D2BC045E263ABFE600AE99E8 /* TextLimiter.swift */,
 				D2BC04562636366E00AE99E8 /* AnalyzeScoresView.swift */,
 				D2BC043026245ABE00AE99E8 /* Main.storyboard */,
 				D2777FA22614886D0029C9C6 /* Assets.xcassets */,
@@ -159,6 +162,7 @@
 				D2BC0449262A1C5300AE99E8 /* HomeView.swift in Sources */,
 				D2777FA12614886D0029C9C6 /* BuildArsenalView.swift in Sources */,
 				D2BC044F262A45EF00AE99E8 /* FindABallView.swift in Sources */,
+				D2BC045F263ABFE600AE99E8 /* TextLimiter.swift in Sources */,
 				D2777F9F2614886D0029C9C6 /* Bowler_s_PocketbookApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

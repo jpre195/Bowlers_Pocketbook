@@ -10,9 +10,11 @@ import SwiftUI
 struct LogScoresView: View {
     
     let eventTypes: [String] = ["Practice", "League", "Tournament"]
+    let scoreLimit = 3
     
     @State var selectedEvent = "Practice"
-    @State var score = ""
+//    @State var score = ""
+    @ObservedObject var score = TextLimiter(limit: 3)
     @State var gameDate = Date()
     
     var body: some View {
@@ -79,12 +81,12 @@ struct LogScoresView: View {
                     
                 Text("Ball used:")
                 
-                TextField("Score", text: $score)
-                    .keyboardType(.numberPad)
-                
                 DatePicker(selection: $gameDate,
                            displayedComponents: .date,
                            label: { Text("Date:") })
+                
+                TextField("Score", text: $score.value)
+                    .keyboardType(.numberPad)
 
                 
             }.navigationBarTitle("Log Scores")
