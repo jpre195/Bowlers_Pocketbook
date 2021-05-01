@@ -66,35 +66,70 @@ struct LogScoresView: View {
 //            Spacer()
 //        }
         
+        
         NavigationView {
             
-            Form {
-                
-                Picker(selection: $selectedEvent, label: Text("Event Type:")) {
-                    ForEach(eventTypes, id: \.self) {
 
-                        Text($0)
+                
+                Form {
+                    
+                    Section {
+                        
+                        Picker(selection: $selectedEvent, label: Text("Event Type")) {
+                            ForEach(eventTypes, id: \.self) {
+
+                                Text($0)
+                                
+                            }
+                                
+                        }
+                            
+                        Text("Ball used")
+                        
+                        DatePicker(selection: $gameDate,
+                                   displayedComponents: .date,
+                                   label: { Text("Date") })
+                        
+                        TextField("Score", text: $score.value)
+                            .keyboardType(.numberPad)
                         
                     }
-                        
-                }
                     
-                Text("Ball used:")
-                
-                DatePicker(selection: $gameDate,
-                           displayedComponents: .date,
-                           label: { Text("Date:") })
-                
-                TextField("Score", text: $score.value)
-                    .keyboardType(.numberPad)
+                    Section {
+                        
+                        HStack {
+                            
+                            Spacer()
+                            
+                            Button("Submit") {
+                                hideKeyboard()
+                            }.buttonStyle(BorderlessButtonStyle())
+                            
+                            Spacer()
+                            
+                        }
+                        
+                    }
 
+                    
+                }.navigationBarTitle("Log Scores")
                 
-            }.navigationBarTitle("Log Scores")
+                
+            }
         
-        }
+        
+        
         
     }
 }
+
+#if canImport(UIKit)
+extension View {
+    func hideKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+}
+#endif
 
 struct LogScoresView_Previews: PreviewProvider {
     static var previews: some View {
