@@ -14,31 +14,92 @@ struct HomeView: View {
             Text("Bowler's Pocketbook").font(.title).bold()
             Spacer()
             
-            HStack {
+            VStack(spacing: 20) {
                 
-                Button("Build Arsenal") {
+                HStack(spacing: 15) {
                     
-                }.padding(24)
+                    MetricsView(dashlet: averageData[0])
+                    MetricsView(dashlet: averageData[1])
+                    
+                }
                 
-                Button("Find a Ball") {
-
-                }.padding(24)
-            }
-            
-            HStack {
-                Button("Log Scores") {
-                    Text("Log Scores")
-                }.padding(24)
+                HStack(spacing: 15) {
+                    
+                    MetricsView(dashlet: averageData[2])
+                    MetricsView(dashlet: averageData[3])
+                    
+                }
                 
-                Button("Analyze Scores") {
-                    Text("Analyze Scores")
-                }.padding(24)
-            }
+                HStack(spacing: 15) {
+                    
+                    MetricsView(dashlet: averageData[4])
+                    MetricsView(dashlet: averageData[5])
+                    
+                }
+                
+            }.padding(10)
             
-            Spacer()
-        }
+            Spacer(minLength: 150)
+            
+        }.padding()
         
     }
+}
+
+struct Dashlet : Identifiable {
+    
+    var id = UUID().uuidString
+    var title : String
+    var value : String
+    var color : Color
+    
+}
+
+var averageData = [
+    Dashlet(title: "High Score", value: "279", color: Color.red),
+    Dashlet(title: "Most Used Ball", value: "279", color: Color.orange),
+    Dashlet(title: "High Series", value: "790", color: Color.yellow),
+    Dashlet(title: "Practice Average", value: "220", color: Color.green),
+    Dashlet(title: "League Average", value: "210", color: Color.blue),
+    Dashlet(title: "Tournament Average", value: "195", color: Color.purple)
+]
+
+
+struct MetricsView : View {
+    
+    var dashlet : Dashlet
+    
+    var body: some View {
+        
+        ZStack {
+            
+            dashlet.color
+            
+            HStack(alignment: .center) {
+                
+                VStack(alignment: .center, spacing: 22) {
+                    
+                    
+                    Text(dashlet.title)
+                        .foregroundColor(.white)
+                        .frame(alignment: .center)
+                        .fixedSize(horizontal: false, vertical: true)
+                    
+                    Spacer()
+                    
+                    Text(dashlet.value)
+                        .font(.system(size: 36))
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                    
+                }
+                
+            }.padding()
+            
+        }.cornerRadius(10)
+        
+    }
+    
 }
 
 struct HomeView_Previews: PreviewProvider {
