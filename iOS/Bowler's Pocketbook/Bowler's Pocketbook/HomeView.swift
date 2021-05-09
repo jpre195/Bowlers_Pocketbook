@@ -78,9 +78,13 @@ struct MetricsView : View {
     
     var body: some View {
         
+        let gradient = Gradient(colors: [dashlet.color, Color.white])
+//        let gradient = Gradient(colors: [dashlet.color, Color.white, dashlet.color])
+        
         ZStack {
             
             dashlet.color
+//            LinearGradient(gradient: gradient, startPoint: .bottomLeading, endPoint: .topTrailing)
             
             HStack(alignment: .center) {
                 
