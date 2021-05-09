@@ -39,9 +39,16 @@ struct HomeView: View {
                 
             }.padding(10)
             
-            Spacer(minLength: 150)
+            ZStack {
+                Color.black.ignoresSafeArea().cornerRadius(10)
+                Color.white.ignoresSafeArea().cornerRadius(10).padding(1)
+                
+                VStack {
+                    Text("Graphs here").foregroundColor(.black)
+                }
+            }
             
-        }.padding()
+        }.edgesIgnoringSafeArea([.bottom])
         
     }
 }
@@ -57,7 +64,7 @@ struct Dashlet : Identifiable {
 
 var averageData = [
     Dashlet(title: "High Score", value: "279", color: Color.red),
-    Dashlet(title: "Most Used Ball", value: "279", color: Color.orange),
+    Dashlet(title: "Most Used Ball", value: "-", color: Color.orange),
     Dashlet(title: "High Series", value: "790", color: Color.yellow),
     Dashlet(title: "Practice Average", value: "220", color: Color.green),
     Dashlet(title: "League Average", value: "210", color: Color.blue),
@@ -77,7 +84,7 @@ struct MetricsView : View {
             
             HStack(alignment: .center) {
                 
-                VStack(alignment: .center, spacing: 22) {
+                VStack(alignment: .center, spacing: 8) {
                     
                     
                     Text(dashlet.title)
@@ -88,7 +95,7 @@ struct MetricsView : View {
                     Spacer()
                     
                     Text(dashlet.value)
-                        .font(.system(size: 36))
+                        .font(.system(size: 30))
                         .fontWeight(.bold)
                         .foregroundColor(.white)
                     
