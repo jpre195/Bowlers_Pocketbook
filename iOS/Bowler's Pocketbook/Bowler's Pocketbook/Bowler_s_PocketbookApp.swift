@@ -27,10 +27,10 @@ struct Bowler_s_PocketbookApp: App {
                     Label("Home", systemImage: "house.fill").foregroundColor(.red)
                 }.tag(1)
                 LogScoresView().tabItem {
-                    Label("Log Scores", systemImage:"archivebox")
+                    Label("Add Scores", systemImage:"plus.square")
                 }.tag(4)
                 AnalyzeScoresView().tabItem {
-                    Label("Analyze Scores", systemImage: "gauge")
+                    Label("View Scores", systemImage: "eyeglasses")
                 }.tag(5)
             }
         }

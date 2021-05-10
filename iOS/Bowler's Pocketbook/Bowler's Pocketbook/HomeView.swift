@@ -21,30 +21,30 @@ struct HomeView: View {
                     MetricsView(dashlet: averageData[0])
                     MetricsView(dashlet: averageData[1])
                     
-                }
+                }.padding([.leading, .trailing], 20)
                 
                 HStack(spacing: 15) {
                     
                     MetricsView(dashlet: averageData[2])
                     MetricsView(dashlet: averageData[3])
                     
-                }
+                }.padding([.leading, .trailing], 20)
                 
                 HStack(spacing: 15) {
                     
                     MetricsView(dashlet: averageData[4])
                     MetricsView(dashlet: averageData[5])
                     
-                }
+                }.padding([.leading, .trailing], 20)
                 
             }.padding(10)
             
             ZStack {
-                Color.black.ignoresSafeArea().cornerRadius(10)
-                Color.white.ignoresSafeArea().cornerRadius(10).padding(1)
+                Color.black.ignoresSafeArea().cornerRadius(30)
+                Color.white.ignoresSafeArea().cornerRadius(30).padding(1)
                 
                 VStack {
-                    Text("Graphs here").foregroundColor(.black)
+                    Text("No data to display").foregroundColor(.black)
                 }
             }
             
@@ -63,12 +63,12 @@ struct Dashlet : Identifiable {
 }
 
 var averageData = [
-    Dashlet(title: "High Score", value: "279", color: Color.red),
+    Dashlet(title: "High Score", value: "-", color: Color.red),
     Dashlet(title: "Most Used Ball", value: "-", color: Color.orange),
-    Dashlet(title: "High Series", value: "790", color: Color.yellow),
-    Dashlet(title: "Practice Average", value: "220", color: Color.green),
-    Dashlet(title: "League Average", value: "210", color: Color.blue),
-    Dashlet(title: "Tournament Average", value: "195", color: Color.purple)
+    Dashlet(title: "High Series", value: "-", color: Color.yellow),
+    Dashlet(title: "Practice Average", value: "-", color: Color.green),
+    Dashlet(title: "League Average", value: "-", color: Color.blue),
+    Dashlet(title: "Tournament Average", value: "-", color: Color.purple)
 ]
 
 
@@ -88,12 +88,13 @@ struct MetricsView : View {
             
             HStack(alignment: .center) {
                 
-                VStack(alignment: .center, spacing: 8) {
+                VStack(alignment: .leading, spacing: 8) {
                     
                     
                     Text(dashlet.title)
+                        .font(.system(size: 12))
                         .foregroundColor(.white)
-                        .frame(alignment: .center)
+                        .frame(alignment: .leading)
                         .fixedSize(horizontal: false, vertical: true)
                     
                     Spacer()
@@ -104,6 +105,8 @@ struct MetricsView : View {
                         .foregroundColor(.white)
                     
                 }
+                
+                Spacer()
                 
             }.padding()
             

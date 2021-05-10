@@ -9,12 +9,41 @@ import SwiftUI
 
 struct FindABallView: View {
     var body: some View {
-        VStack {
-            HStack {
-                Text("Find A Ball").bold().font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+        
+        NavigationView {
+
+            List(/*@START_MENU_TOKEN@*/0 ..< 5/*@END_MENU_TOKEN@*/) { item in
+                Image(systemName: "person.circle")
+                    .resizable()
+                    .frame(width: 48, height: 48)
+                
+                VStack(alignment: .leading) {
+                    Text("Brand")
+                        .font(.system(size: 12))
+                    Text("Ball")
+                        .font(.system(size: 12))
+                    Text("Coverstock")
+                        .font(.system(size: 12))
+                }
+                
+                Spacer()
+                
+                VStack(alignment: .trailing) {
+                    
+                    Text("RG")
+                        .font(.system(size: 12))
+                    Text("Differential")
+                        .font(.system(size: 12))
+                    Text("Core")
+                        .font(.system(size: 12))
+                    
+                }
+                
             }
-            Spacer()
+            
+            .navigationBarTitle("Find a Ball")
         }
+        
     }
 }
 

@@ -10,14 +10,29 @@ import SwiftUI
 struct AnalyzeScoresView: View {
     
     var body: some View {
-
-        VStack {
-            HStack {
-                Text("Analyze Scores").bold().font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-            }
-            Spacer()
-        }
         
+        NavigationView {
+
+            List(/*@START_MENU_TOKEN@*/0 ..< 5/*@END_MENU_TOKEN@*/) { item in
+                Image(systemName: "person.circle")
+                    .resizable()
+                    .frame(width: 48, height: 48)
+                
+                VStack(alignment: .leading) {
+                    Text("Event type")
+                        .font(.system(size: 12))
+                    Text("Date")
+                        .font(.system(size: 12))
+                }
+                
+                Spacer()
+                
+                Text("Score")
+                
+            }
+            
+            .navigationBarTitle("View Scores")
+        }
     }
 }
 
