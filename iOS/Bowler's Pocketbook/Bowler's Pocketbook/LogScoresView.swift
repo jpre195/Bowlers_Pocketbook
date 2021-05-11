@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct LogScoresView: View {
     
@@ -15,7 +16,10 @@ struct LogScoresView: View {
     @State var selectedEvent = "Practice"
 //    @State var score = ""
     @ObservedObject var score = TextLimiter(limit: 3)
+    @ObservedObject var game = TextLimiter(limit: 2)
     @State var gameDate = Date()
+    
+    @State var scores : [NSManagedObject] = []
     
     var body: some View {
 
@@ -89,6 +93,9 @@ struct LogScoresView: View {
                         DatePicker(selection: $gameDate,
                                    displayedComponents: .date,
                                    label: { Text("Date") })
+                        
+                        TextField("Game", text: $game.value)
+                            .keyboardType(.numberPad)
                         
                         TextField("Score", text: $score.value)
                             .keyboardType(.numberPad)

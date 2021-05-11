@@ -17,6 +17,7 @@
 		D2BC04532636355800AE99E8 /* LogScoresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BC04522636355800AE99E8 /* LogScoresView.swift */; };
 		D2BC04572636366E00AE99E8 /* AnalyzeScoresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BC04562636366E00AE99E8 /* AnalyzeScoresView.swift */; };
 		D2BC045F263ABFE600AE99E8 /* TextLimiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BC045E263ABFE600AE99E8 /* TextLimiter.swift */; };
+		D2BC0464264B1B5800AE99E8 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D2BC0462264B1B5700AE99E8 /* DataModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		D2BC04522636355800AE99E8 /* LogScoresView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogScoresView.swift; sourceTree = "<group>"; };
 		D2BC04562636366E00AE99E8 /* AnalyzeScoresView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzeScoresView.swift; sourceTree = "<group>"; };
 		D2BC045E263ABFE600AE99E8 /* TextLimiter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextLimiter.swift; sourceTree = "<group>"; };
+		D2BC0463264B1B5700AE99E8 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				D2BC04562636366E00AE99E8 /* AnalyzeScoresView.swift */,
 				D2BC045E263ABFE600AE99E8 /* TextLimiter.swift */,
 				D2BC043026245ABE00AE99E8 /* Main.storyboard */,
+				D2BC0462264B1B5700AE99E8 /* DataModel.xcdatamodeld */,
 				D2777FA22614886D0029C9C6 /* Assets.xcassets */,
 				D2777FA72614886D0029C9C6 /* Info.plist */,
 				D2777FA42614886D0029C9C6 /* Preview Content */,
@@ -158,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2BC04572636366E00AE99E8 /* AnalyzeScoresView.swift in Sources */,
+				D2BC0464264B1B5800AE99E8 /* DataModel.xcdatamodeld in Sources */,
 				D2BC04532636355800AE99E8 /* LogScoresView.swift in Sources */,
 				D2BC0449262A1C5300AE99E8 /* HomeView.swift in Sources */,
 				D2777FA12614886D0029C9C6 /* BuildArsenalView.swift in Sources */,
@@ -352,6 +356,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D2BC0462264B1B5700AE99E8 /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D2BC0463264B1B5700AE99E8 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = D2BC0463264B1B5700AE99E8 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D2777F932614886D0029C9C6 /* Project object */;
 }
