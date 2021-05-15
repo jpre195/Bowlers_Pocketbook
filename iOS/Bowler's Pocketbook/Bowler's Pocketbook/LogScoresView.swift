@@ -22,6 +22,7 @@ struct LogScoresView: View {
     @State var scores : [NSManagedObject] = []
     
     var body: some View {
+    
 
 //        VStack {
 //
@@ -126,6 +127,30 @@ struct LogScoresView: View {
         
         
         
+    }
+    
+    func addScore() {
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        guard let entity = NSEntityDescription.entity(forEntityName: "Score", in: managedContext) else { return }
+        
+        let newScore = NSManagedObject(entity: entity, insertInto: managedContext)
+        
+        newScore.setValue($selectedEvent.wrappedValue, forKeyPath: "eventType")
+        
+        do {
+            
+            try managedContext.save()
+            print("Saved successfully. \($selectedEvent.wrappedValue)")
+            
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
         
     }
 }

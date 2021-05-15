@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D21CC7B5264F498800C6F4FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21CC7B4264F498800C6F4FB /* AppDelegate.swift */; };
 		D2777F9F2614886D0029C9C6 /* Bowler_s_PocketbookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2777F9E2614886D0029C9C6 /* Bowler_s_PocketbookApp.swift */; };
 		D2777FA12614886D0029C9C6 /* BuildArsenalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2777FA02614886D0029C9C6 /* BuildArsenalView.swift */; };
 		D2777FA32614886D0029C9C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2777FA22614886D0029C9C6 /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D21CC7B4264F498800C6F4FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2777F9B2614886D0029C9C6 /* Bowler's Pocketbook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bowler's Pocketbook.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2777F9E2614886D0029C9C6 /* Bowler_s_PocketbookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bowler_s_PocketbookApp.swift; sourceTree = "<group>"; };
 		D2777FA02614886D0029C9C6 /* BuildArsenalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildArsenalView.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 		D2777F9D2614886D0029C9C6 /* Bowler's Pocketbook */ = {
 			isa = PBXGroup;
 			children = (
+				D21CC7B4264F498800C6F4FB /* AppDelegate.swift */,
 				D2777F9E2614886D0029C9C6 /* Bowler_s_PocketbookApp.swift */,
 				D2BC0448262A1C5200AE99E8 /* HomeView.swift */,
 				D2777FA02614886D0029C9C6 /* BuildArsenalView.swift */,
@@ -163,6 +166,7 @@
 				D2BC04572636366E00AE99E8 /* AnalyzeScoresView.swift in Sources */,
 				D2BC0464264B1B5800AE99E8 /* DataModel.xcdatamodeld in Sources */,
 				D2BC04532636355800AE99E8 /* LogScoresView.swift in Sources */,
+				D21CC7B5264F498800C6F4FB /* AppDelegate.swift in Sources */,
 				D2BC0449262A1C5300AE99E8 /* HomeView.swift in Sources */,
 				D2777FA12614886D0029C9C6 /* BuildArsenalView.swift in Sources */,
 				D2BC044F262A45EF00AE99E8 /* FindABallView.swift in Sources */,
