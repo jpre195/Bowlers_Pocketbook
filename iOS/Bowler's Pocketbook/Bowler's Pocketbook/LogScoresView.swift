@@ -109,9 +109,21 @@ struct LogScoresView: View {
                             
                             Spacer()
                             
-                            Button("Submit") {
+//                            Button("Add score") {
+//                                print("Loading scores")
+//                                self.loadScores()
+//                                print("Adding score")
+//                                self.addScore()
+//                                print("Added score")
+//                                hideKeyboard()
+//                            }.buttonStyle(BorderlessButtonStyle())
+                            
+                            Button(action: {
+                                self.addScore()
                                 hideKeyboard()
-                            }.buttonStyle(BorderlessButtonStyle())
+                            }, label: {
+                                Text("Add score")
+                            })
                             
                             Spacer()
                             
@@ -137,19 +149,44 @@ struct LogScoresView: View {
         
         let managedContext = appDelegate.persistentContainer.viewContext
         
-        guard let entity = NSEntityDescription.entity(forEntityName: "Score", in: managedContext) else { return }
+        let entity = NSEntityDescription.entity(forEntityName: "Score", in: managedContext)!
         
         let newScore = NSManagedObject(entity: entity, insertInto: managedContext)
         
+        print("Setting values")
+        
         newScore.setValue($selectedEvent.wrappedValue, forKeyPath: "eventType")
+//        newScore.setValue(Int($score.value.wrappedValue), forKey: "score")
+//        newScore.setValue(Int($game.value.wrappedValue), forKey: "game")
+//        newScore.setValue(gameDate.format(), forKey: "date")
+//        newScore.setValue(nil, forKey: "ballUsed")
         
         do {
             
             try managedContext.save()
-            print("Saved successfully. \($selectedEvent.wrappedValue)")
+            print("Saved successfully.")
+            self.loadScores()
             
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
+        }
+        
+    }
+    
+    func loadScores() {
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Score")
+        
+        do {
+            scores = try managedContext.fetch(fetchRequest)
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
         }
         
     }
@@ -162,6 +199,24 @@ extension View {
     }
 }
 #endif
+
+extension Date {
+    /**
+     Formats a Date
+
+     - parameters format: (String) for eg dd-MM-yyyy hh-mm-ss
+     */
+    func format(format:String = "dd-MM-yyyy hh-mm-ss") -> Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format
+        let dateString = dateFormatter.string(from: self)
+        if let newDate = dateFormatter.date(from: dateString) {
+            return newDate
+        } else {
+            return self
+        }
+    }
+}
 
 struct LogScoresView_Previews: PreviewProvider {
     static var previews: some View {

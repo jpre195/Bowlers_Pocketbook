@@ -16,23 +16,43 @@ struct AnalyzeScoresView: View {
         
         NavigationView {
 
-            List(/*@START_MENU_TOKEN@*/0 ..< 5/*@END_MENU_TOKEN@*/) { item in
+            List(scores, id: \.self) { item in
                 Image(systemName: "person.circle")
                     .resizable()
                     .frame(width: 48, height: 48)
-                
+
                 VStack(alignment: .leading) {
-                    Text("Event type")
+                    Text((item as? Score)?.eventType ?? "Event type error")
                         .font(.system(size: 12))
+//                    Text("Event Type")
+//                        .font(.system(size: 12))
                     Text("Date")
                         .font(.system(size: 12))
                 }
-                
+
                 Spacer()
-                
+
                 Text("Score")
-                
+
             }
+            
+//            List(0 ..< 5) { item in
+//                Image(systemName: "person.circle")
+//                    .resizable()
+//                    .frame(width: 48, height: 48)
+//
+//                VStack(alignment: .leading) {
+//                    Text("Event Type")
+//                        .font(.system(size: 12))
+//                    Text("Date")
+//                        .font(.system(size: 12))
+//                }
+//
+//                Spacer()
+//
+//                Text("Score")
+//
+//            }
             
 //            List(scores, id: \.self) { score in
 //                Image(systemName: "person.circle")
