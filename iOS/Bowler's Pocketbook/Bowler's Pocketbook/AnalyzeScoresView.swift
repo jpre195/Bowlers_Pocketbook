@@ -10,19 +10,21 @@ import CoreData
 
 struct AnalyzeScoresView: View {
     
-    @State var scores : [NSManagedObject] = []
+//    @State var scores : [NSManagedObject] = []
+    
+    @FetchRequest(entity: Score.entity(), sortDescriptors: []) var scores : FetchedResults<Score>
     
     var body: some View {
         
         NavigationView {
-
-            List(scores, id: \.self) { item in
+            
+            List(scores, id: \.id) { item in
                 Image(systemName: "person.circle")
                     .resizable()
                     .frame(width: 48, height: 48)
 
                 VStack(alignment: .leading) {
-                    Text((item as? Score)?.eventType ?? "Event type error")
+                    Text(item.eventType ?? "Event type error")
                         .font(.system(size: 12))
 //                    Text("Event Type")
 //                        .font(.system(size: 12))
@@ -35,6 +37,26 @@ struct AnalyzeScoresView: View {
                 Text("Score")
 
             }
+
+//            List(scores, id: \.id) { item in
+//                Image(systemName: "person.circle")
+//                    .resizable()
+//                    .frame(width: 48, height: 48)
+//
+//                VStack(alignment: .leading) {
+//                    Text((item as? Score)?.eventType ?? "Event type error")
+//                        .font(.system(size: 12))
+////                    Text("Event Type")
+////                        .font(.system(size: 12))
+//                    Text("Date")
+//                        .font(.system(size: 12))
+//                }
+//
+//                Spacer()
+//
+//                Text("Score")
+//
+//            }
             
 //            List(0 ..< 5) { item in
 //                Image(systemName: "person.circle")

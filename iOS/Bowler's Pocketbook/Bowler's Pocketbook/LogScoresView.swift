@@ -19,7 +19,10 @@ struct LogScoresView: View {
     @ObservedObject var game = TextLimiter(limit: 2)
     @State var gameDate = Date()
     
-    @State var scores : [NSManagedObject] = []
+//    @State var scores : [NSManagedObject] = []
+    
+    @Environment(\.managedObjectContext) var moc
+    @FetchRequest(entity: Score.entity(), sortDescriptors: []) var scores : FetchedResults<Score>
     
     var body: some View {
     
@@ -119,7 +122,23 @@ struct LogScoresView: View {
 //                            }.buttonStyle(BorderlessButtonStyle())
                             
                             Button(action: {
-                                self.addScore()
+                                print("\nCheckpoint 1\n")
+                                
+                                let newScore = Score(context: moc)
+                                
+                                print("\nCheckpoint 2\n")
+                                
+                                newScore.ballUsed = "Omega Crux"
+                                newScore.game = Int16(game.value) ?? 1
+                                newScore.score = Int32(score.value) ?? 0
+                                newScore.date = gameDate
+                                
+                                print("\nCheckpoint 3\n")
+                                
+                                try? self.moc.save()
+                                
+                                print("Score added")
+                                
                                 hideKeyboard()
                             }, label: {
                                 Text("Add score")
@@ -141,55 +160,67 @@ struct LogScoresView: View {
         
     }
     
-    func addScore() {
-        
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            return
-        }
-        
-        let managedContext = appDelegate.persistentContainer.viewContext
-        
-        let entity = NSEntityDescription.entity(forEntityName: "Score", in: managedContext)!
-        
-        let newScore = NSManagedObject(entity: entity, insertInto: managedContext)
-        
-        print("Setting values")
-        
-        newScore.setValue($selectedEvent.wrappedValue, forKeyPath: "eventType")
+//    func addScore() {
+//        print("Add score start")
+//
+////        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+////            print("Checkpoint 0")
+////            return
+////        }
+//
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//
+//        print("Checkpoint 1")
+//
+//        let managedContext = appDelegate.persistentContainer.viewContext
+//
+//        print("Checkpoint 2")
+//
+//        let entity = NSEntityDescription.entity(forEntityName: "Score", in: managedContext)!
+//
+//        print("Checkpoint 3")
+//
+//        let newScore = NSManagedObject(entity: entity, insertInto: managedContext)
+//
+//        print("Setting values")
+//
+//        newScore.setValue($selectedEvent.wrappedValue, forKeyPath: "eventType")
 //        newScore.setValue(Int($score.value.wrappedValue), forKey: "score")
 //        newScore.setValue(Int($game.value.wrappedValue), forKey: "game")
 //        newScore.setValue(gameDate.format(), forKey: "date")
 //        newScore.setValue(nil, forKey: "ballUsed")
-        
-        do {
-            
-            try managedContext.save()
-            print("Saved successfully.")
-            self.loadScores()
-            
-        } catch let error as NSError {
-            print("Could not save. \(error), \(error.userInfo)")
-        }
-        
-    }
-    
-    func loadScores() {
-        
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            return
-        }
-        
-        let managedContext = appDelegate.persistentContainer.viewContext
-        
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Score")
-        
-        do {
-            scores = try managedContext.fetch(fetchRequest)
-        } catch let error as NSError {
-            print("Could not fetch. \(error), \(error.userInfo)")
-        }
-        
-    }
+//
+//        print("Checkpoint 4")
+//
+//        do {
+//
+//            try managedContext.save()
+//            print("Saved successfully.")
+//            self.loadScores()
+//
+//        } catch let error as NSError {
+//            print("Could not save. \(error), \(error.userInfo)")
+//        }
+//
+//    }
+//
+//    func loadScores() {
+//
+//        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+//            return
+//        }
+//
+//        let managedContext = appDelegate.persistentContainer.viewContext
+//
+//        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Score")
+//
+//        do {
+//            scores = try managedContext.fetch(fetchRequest)
+//        } catch let error as NSError {
+//            print("Could not fetch. \(error), \(error.userInfo)")
+//        }
+//
+//    }
 }
 
 #if canImport(UIKit)
