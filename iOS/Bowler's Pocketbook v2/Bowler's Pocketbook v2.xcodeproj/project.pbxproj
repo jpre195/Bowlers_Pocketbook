@@ -1,0 +1,354 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D20DFE8C2651B94200122C8D /* Bowler_s_Pocketbook_v2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20DFE8B2651B94200122C8D /* Bowler_s_Pocketbook_v2App.swift */; };
+		D20DFE8E2651B94200122C8D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20DFE8D2651B94200122C8D /* ContentView.swift */; };
+		D20DFE902651B94200122C8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D20DFE8F2651B94200122C8D /* Assets.xcassets */; };
+		D20DFE932651B94200122C8D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D20DFE922651B94200122C8D /* Preview Assets.xcassets */; };
+		D20DFE952651B94200122C8D /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20DFE942651B94200122C8D /* Persistence.swift */; };
+		D20DFE982651B94200122C8D /* Bowler_s_Pocketbook_v2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D20DFE962651B94200122C8D /* Bowler_s_Pocketbook_v2.xcdatamodeld */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D20DFE882651B94200122C8D /* Bowler's Pocketbook v2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bowler's Pocketbook v2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D20DFE8B2651B94200122C8D /* Bowler_s_Pocketbook_v2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bowler_s_Pocketbook_v2App.swift; sourceTree = "<group>"; };
+		D20DFE8D2651B94200122C8D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D20DFE8F2651B94200122C8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D20DFE922651B94200122C8D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D20DFE942651B94200122C8D /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		D20DFE972651B94200122C8D /* Bowler_s_Pocketbook_v2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Bowler_s_Pocketbook_v2.xcdatamodel; sourceTree = "<group>"; };
+		D20DFE992651B94200122C8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D20DFE852651B94200122C8D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D20DFE7F2651B94200122C8D = {
+			isa = PBXGroup;
+			children = (
+				D20DFE8A2651B94200122C8D /* Bowler's Pocketbook v2 */,
+				D20DFE892651B94200122C8D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D20DFE892651B94200122C8D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D20DFE882651B94200122C8D /* Bowler's Pocketbook v2.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D20DFE8A2651B94200122C8D /* Bowler's Pocketbook v2 */ = {
+			isa = PBXGroup;
+			children = (
+				D20DFE8B2651B94200122C8D /* Bowler_s_Pocketbook_v2App.swift */,
+				D20DFE942651B94200122C8D /* Persistence.swift */,
+				D20DFE8D2651B94200122C8D /* ContentView.swift */,
+				D20DFE8F2651B94200122C8D /* Assets.xcassets */,
+				D20DFE992651B94200122C8D /* Info.plist */,
+				D20DFE962651B94200122C8D /* Bowler_s_Pocketbook_v2.xcdatamodeld */,
+				D20DFE912651B94200122C8D /* Preview Content */,
+			);
+			path = "Bowler's Pocketbook v2";
+			sourceTree = "<group>";
+		};
+		D20DFE912651B94200122C8D /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				D20DFE922651B94200122C8D /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D20DFE872651B94200122C8D /* Bowler's Pocketbook v2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D20DFE9C2651B94200122C8D /* Build configuration list for PBXNativeTarget "Bowler's Pocketbook v2" */;
+			buildPhases = (
+				D20DFE842651B94200122C8D /* Sources */,
+				D20DFE852651B94200122C8D /* Frameworks */,
+				D20DFE862651B94200122C8D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Bowler's Pocketbook v2";
+			productName = "Bowler's Pocketbook v2";
+			productReference = D20DFE882651B94200122C8D /* Bowler's Pocketbook v2.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D20DFE802651B94200122C8D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					D20DFE872651B94200122C8D = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = D20DFE832651B94200122C8D /* Build configuration list for PBXProject "Bowler's Pocketbook v2" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D20DFE7F2651B94200122C8D;
+			productRefGroup = D20DFE892651B94200122C8D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D20DFE872651B94200122C8D /* Bowler's Pocketbook v2 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D20DFE862651B94200122C8D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D20DFE932651B94200122C8D /* Preview Assets.xcassets in Resources */,
+				D20DFE902651B94200122C8D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D20DFE842651B94200122C8D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D20DFE952651B94200122C8D /* Persistence.swift in Sources */,
+				D20DFE8E2651B94200122C8D /* ContentView.swift in Sources */,
+				D20DFE8C2651B94200122C8D /* Bowler_s_Pocketbook_v2App.swift in Sources */,
+				D20DFE982651B94200122C8D /* Bowler_s_Pocketbook_v2.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		D20DFE9A2651B94200122C8D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D20DFE9B2651B94200122C8D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D20DFE9D2651B94200122C8D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Bowler's Pocketbook v2/Preview Content\"";
+				DEVELOPMENT_TEAM = PJS72PXCZ4;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Bowler's Pocketbook v2/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.prestonanalytics.Bowler-s-Pocketbook-v2";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D20DFE9E2651B94200122C8D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Bowler's Pocketbook v2/Preview Content\"";
+				DEVELOPMENT_TEAM = PJS72PXCZ4;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Bowler's Pocketbook v2/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.prestonanalytics.Bowler-s-Pocketbook-v2";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D20DFE832651B94200122C8D /* Build configuration list for PBXProject "Bowler's Pocketbook v2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D20DFE9A2651B94200122C8D /* Debug */,
+				D20DFE9B2651B94200122C8D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D20DFE9C2651B94200122C8D /* Build configuration list for PBXNativeTarget "Bowler's Pocketbook v2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D20DFE9D2651B94200122C8D /* Debug */,
+				D20DFE9E2651B94200122C8D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D20DFE962651B94200122C8D /* Bowler_s_Pocketbook_v2.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D20DFE972651B94200122C8D /* Bowler_s_Pocketbook_v2.xcdatamodel */,
+			);
+			currentVersion = D20DFE972651B94200122C8D /* Bowler_s_Pocketbook_v2.xcdatamodel */;
+			path = Bowler_s_Pocketbook_v2.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = D20DFE802651B94200122C8D /* Project object */;
+}
