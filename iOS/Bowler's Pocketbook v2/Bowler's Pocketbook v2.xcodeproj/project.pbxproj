@@ -13,6 +13,12 @@
 		D20DFE932651B94200122C8D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D20DFE922651B94200122C8D /* Preview Assets.xcassets */; };
 		D20DFE952651B94200122C8D /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20DFE942651B94200122C8D /* Persistence.swift */; };
 		D20DFE982651B94200122C8D /* Bowler_s_Pocketbook_v2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D20DFE962651B94200122C8D /* Bowler_s_Pocketbook_v2.xcdatamodeld */; };
+		D20DFEA22651BA1000122C8D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20DFEA12651BA1000122C8D /* HomeView.swift */; };
+		D20DFEA52651BA4100122C8D /* BuildArsenalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20DFEA42651BA4100122C8D /* BuildArsenalView.swift */; };
+		D20DFEA82651BA8100122C8D /* FindABallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20DFEA72651BA8100122C8D /* FindABallView.swift */; };
+		D20DFEAC2651BAA800122C8D /* LogScoresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20DFEAB2651BAA800122C8D /* LogScoresView.swift */; };
+		D20DFEB02651BAD100122C8D /* AnalyzeScoresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20DFEAF2651BAD100122C8D /* AnalyzeScoresView.swift */; };
+		D20DFEB42651BB1B00122C8D /* TextLimiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20DFEB32651BB1B00122C8D /* TextLimiter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +30,12 @@
 		D20DFE942651B94200122C8D /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		D20DFE972651B94200122C8D /* Bowler_s_Pocketbook_v2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Bowler_s_Pocketbook_v2.xcdatamodel; sourceTree = "<group>"; };
 		D20DFE992651B94200122C8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D20DFEA12651BA1000122C8D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		D20DFEA42651BA4100122C8D /* BuildArsenalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildArsenalView.swift; sourceTree = "<group>"; };
+		D20DFEA72651BA8100122C8D /* FindABallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindABallView.swift; sourceTree = "<group>"; };
+		D20DFEAB2651BAA800122C8D /* LogScoresView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogScoresView.swift; sourceTree = "<group>"; };
+		D20DFEAF2651BAD100122C8D /* AnalyzeScoresView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzeScoresView.swift; sourceTree = "<group>"; };
+		D20DFEB32651BB1B00122C8D /* TextLimiter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextLimiter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +72,12 @@
 				D20DFE942651B94200122C8D /* Persistence.swift */,
 				D20DFE8D2651B94200122C8D /* ContentView.swift */,
 				D20DFE8F2651B94200122C8D /* Assets.xcassets */,
+				D20DFEA12651BA1000122C8D /* HomeView.swift */,
+				D20DFEA42651BA4100122C8D /* BuildArsenalView.swift */,
+				D20DFEA72651BA8100122C8D /* FindABallView.swift */,
+				D20DFEAB2651BAA800122C8D /* LogScoresView.swift */,
+				D20DFEAF2651BAD100122C8D /* AnalyzeScoresView.swift */,
+				D20DFEB32651BB1B00122C8D /* TextLimiter.swift */,
 				D20DFE992651B94200122C8D /* Info.plist */,
 				D20DFE962651B94200122C8D /* Bowler_s_Pocketbook_v2.xcdatamodeld */,
 				D20DFE912651B94200122C8D /* Preview Content */,
@@ -144,9 +162,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D20DFEA52651BA4100122C8D /* BuildArsenalView.swift in Sources */,
 				D20DFE952651B94200122C8D /* Persistence.swift in Sources */,
+				D20DFEAC2651BAA800122C8D /* LogScoresView.swift in Sources */,
+				D20DFEB02651BAD100122C8D /* AnalyzeScoresView.swift in Sources */,
 				D20DFE8E2651B94200122C8D /* ContentView.swift in Sources */,
+				D20DFEB42651BB1B00122C8D /* TextLimiter.swift in Sources */,
 				D20DFE8C2651B94200122C8D /* Bowler_s_Pocketbook_v2App.swift in Sources */,
+				D20DFEA82651BA8100122C8D /* FindABallView.swift in Sources */,
+				D20DFEA22651BA1000122C8D /* HomeView.swift in Sources */,
 				D20DFE982651B94200122C8D /* Bowler_s_Pocketbook_v2.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
