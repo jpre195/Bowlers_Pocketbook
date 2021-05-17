@@ -18,11 +18,17 @@ struct LogScoresView: View {
     @ObservedObject var score = TextLimiter(limit: 3)
     @ObservedObject var game = TextLimiter(limit: 2)
     @State var gameDate = Date()
+    @State var showErrorMessage = false
+    @State var showSuccessMessage = false
 
 //    @State var scores : [NSManagedObject] = []
 
-    @Environment(\.managedObjectContext) var moc
-    @FetchRequest(entity: Score.entity(), sortDescriptors: []) var scores : FetchedResults<Score>
+    @Environment(\.managedObjectContext) private var viewContext
+
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \Score.date, ascending: false)],
+        animation: .default)
+    private var scores: FetchedResults<Score>
 
     var body: some View {
 
@@ -121,28 +127,39 @@ struct LogScoresView: View {
 //                                hideKeyboard()
 //                            }.buttonStyle(BorderlessButtonStyle())
 
-                            Button(action: {
-                                print("\nCheckpoint 1\n")
-
-                                let newScore = Score(context: moc)
-
-                                print("\nCheckpoint 2\n")
-
-                                newScore.ballUsed = "Omega Crux"
-                                newScore.game = Int16(game.value) ?? 1
-                                newScore.score = Int32(score.value) ?? 0
-                                newScore.date = gameDate
-
-                                print("\nCheckpoint 3\n")
-
-                                try? self.moc.save()
-
-                                print("Score added")
-
-                                hideKeyboard()
-                            }, label: {
-                                Text("Add score")
-                            })
+//                            Button(action: {
+//                                print("\nCheckpoint 1\n")
+//
+//                                let newScore = Score(context: moc)
+//
+//                                print("\nCheckpoint 2\n")
+//
+//                                newScore.ballUsed = "Omega Crux"
+//                                newScore.game = Int16(game.value) ?? 1
+//                                newScore.score = Int32(score.value) ?? 0
+//                                newScore.date = gameDate
+//
+//                                print("\nCheckpoint 3\n")
+//
+//                                try? self.moc.save()
+//
+//                                print("Score added")
+//
+//                                hideKeyboard()
+//                            }, label: {
+//                                Text("Add score")
+//                            })
+                            
+                            Button(action: addScore) {
+                                Label("Add Score", systemImage: "plus")
+                            }
+//                            .alert(isPresented: $showErrorMessage) {
+//                                Alert(title: Text("Error"), message: Text("Score must be between 0 and 300."), dismissButton: .default(Text("OK")))
+//                            }.alert(isPresented: $showSuccessMessage, content: {
+//                                Alert(title: Text("Success"),
+//                                      message: Text("Score added."),
+//                                      dismissButton: .default(Text("Ok")))
+//                            })
 
                             Spacer()
 
@@ -158,6 +175,36 @@ struct LogScoresView: View {
 
 
 
+    }
+    
+    private func addScore() {
+        withAnimation {
+            let newScore = Score(context: viewContext)
+//            newItem.timestamp = Date()
+            
+            if (Int(score.value)! > 300) || (Int(score.value)! < 0) {
+                showErrorMessage = true
+            }
+            
+            newScore.ballUsed = "Omega Crux"
+            newScore.date = gameDate
+            newScore.eventType = selectedEvent
+            newScore.game = Int16(game.value) ?? 1
+            newScore.score = Int32(score.value) ?? 0
+            newScore.id = UUID()
+
+            do {
+                try viewContext.save()
+                showSuccessMessage = true
+            } catch {
+                // Replace this implementation with code to handle the error appropriately.
+                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                let nsError = error as NSError
+                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+            }
+        }
+        
+        hideKeyboard()
     }
 
 //    func addScore() {
