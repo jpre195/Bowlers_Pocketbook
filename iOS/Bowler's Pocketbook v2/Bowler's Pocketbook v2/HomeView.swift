@@ -8,8 +8,91 @@
 import SwiftUI
 
 struct HomeView: View {
+    
+    @Environment(\.managedObjectContext) private var viewContext
+
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \Score.date, ascending: false)],
+        animation: .default)
+    private var scores: FetchedResults<Score>
+    
+    var highScore: Int32 {
+        let scoresList = scores.compactMap{$0.score} as [Int32]
+        return scoresList.max() ?? 0
+    }
+    
+    var practiceAverage: Int {
+        var total: Int = 0
+        var count: Int = 0
+        for score in scores {
+            if score.eventType == "Practice" {
+                total += Int(score.score)
+                count += 1
+            }
+        }
+        
+        if count == 0 {
+            return 0
+        } else {
+            return Int(total / count)
+        }
+    }
+    
+    var leagueAverage: Int {
+        var total: Int = 0
+        var count: Int = 0
+        for score in scores {
+            if score.eventType == "League" {
+                total += Int(score.score)
+                count += 1
+            }
+        }
+        
+        if count == 0 {
+            return 0
+        } else {
+            return Int(total / count)
+        }
+    }
+    
+    var tournamentAverage: Int {
+        var total: Int = 0
+        var count: Int = 0
+        for score in scores {
+            if score.eventType == "Tournament" {
+                total += Int(score.score)
+                count += 1
+            }
+        }
+        
+        if count == 0 {
+            return 0
+        } else {
+            return Int(total / count)
+        }
+    }
+    
+//    var averageData = [
+//        Dashlet(title: "High Score", value: String(highScore), color: Color.red),
+//        Dashlet(title: "Most Used Ball", value: "-", color: Color.orange),
+//        Dashlet(title: "High Series", value: "-", color: Color.yellow),
+//        Dashlet(title: "Practice Average", value: "-", color: Color.green),
+//        Dashlet(title: "League Average", value: "-", color: Color.blue),
+//        Dashlet(title: "Tournament Average", value: "-", color: Color.purple)
+//    ]
+    
+    var averageData: [Dashlet] {
+        [Dashlet(title: "High Score", value: String(highScore), color: Color.red),
+        Dashlet(title: "Most Used Ball", value: "-", color: Color.orange),
+        Dashlet(title: "High Series", value: "-", color: Color.yellow),
+        Dashlet(title: "Practice Average", value: String(practiceAverage), color: Color.green),
+        Dashlet(title: "League Average", value: String(leagueAverage), color: Color.blue),
+        Dashlet(title: "Tournament Average", value: String(tournamentAverage), color: Color.purple)
+        ]
+    }
 
     var body: some View {
+        
         VStack {
             Text("Bowler's Pocketbook").font(.title).bold()
             Spacer()
@@ -61,15 +144,6 @@ struct Dashlet : Identifiable {
     var color : Color
 
 }
-
-var averageData = [
-    Dashlet(title: "High Score", value: "-", color: Color.red),
-    Dashlet(title: "Most Used Ball", value: "-", color: Color.orange),
-    Dashlet(title: "High Series", value: "-", color: Color.yellow),
-    Dashlet(title: "Practice Average", value: "-", color: Color.green),
-    Dashlet(title: "League Average", value: "-", color: Color.blue),
-    Dashlet(title: "Tournament Average", value: "-", color: Color.purple)
-]
 
 
 struct MetricsView : View {

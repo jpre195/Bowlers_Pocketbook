@@ -151,15 +151,9 @@ struct LogScoresView: View {
 //                            })
                             
                             Button(action: addScore) {
-                                Label("Add Score", systemImage: "plus")
+                                Text("Add Score")
                             }
-//                            .alert(isPresented: $showErrorMessage) {
-//                                Alert(title: Text("Error"), message: Text("Score must be between 0 and 300."), dismissButton: .default(Text("OK")))
-//                            }.alert(isPresented: $showSuccessMessage, content: {
-//                                Alert(title: Text("Success"),
-//                                      message: Text("Score added."),
-//                                      dismissButton: .default(Text("Ok")))
-//                            })
+                            .disabled(game.value.isEmpty || score.value.isEmpty || Int(score.value)! > 300)
 
                             Spacer()
 
@@ -184,6 +178,7 @@ struct LogScoresView: View {
             
             if (Int(score.value)! > 300) || (Int(score.value)! < 0) {
                 showErrorMessage = true
+                return
             }
             
             newScore.ballUsed = "Omega Crux"

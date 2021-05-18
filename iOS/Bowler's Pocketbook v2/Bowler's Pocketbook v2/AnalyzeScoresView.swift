@@ -35,6 +35,8 @@ struct AnalyzeScoresView: View {
                                 .font(.system(size: 12))
         //                    Text("Event Type")
         //                        .font(.system(size: 12))
+                            Text("Game: \(score.game)")
+                                .font(.system(size: 12))
                             Text("\(score.date!, formatter: dateFormatter)")
                                 .font(.system(size: 12))
                             
@@ -43,7 +45,8 @@ struct AnalyzeScoresView: View {
         
                         Spacer()
         
-                        Text(String(score.score) )
+                        Text(String(score.score))
+                            .font(.system(size: 24))
                     }
                 }
                 .onDelete(perform: deleteScores)
