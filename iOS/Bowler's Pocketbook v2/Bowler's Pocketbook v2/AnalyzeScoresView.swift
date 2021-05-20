@@ -11,6 +11,8 @@ import CoreData
 struct AnalyzeScoresView: View {
 
 //    @State var scores : [NSManagedObject] = []
+    
+    @State private var showingSearch = false
 
     @Environment(\.managedObjectContext) private var viewContext
 
@@ -129,6 +131,21 @@ struct AnalyzeScoresView: View {
 //            }
 
             .navigationBarTitle("View Scores")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    HStack {
+                        Button(action: {
+                            showingSearch.toggle()
+                        }, label : {
+                            Image(systemName: "magnifyingglass")
+                        })
+                        .sheet(isPresented: $showingSearch) {
+                            SearchScoreView()
+                        }
+                        Spacer()
+                    }
+                }
+            }
         }
     }
     
