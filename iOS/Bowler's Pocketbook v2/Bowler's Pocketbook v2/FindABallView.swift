@@ -21,6 +21,24 @@ struct FindABallView: View {
 //                    Image(systemName: "magnifyingglass")
 //                }.padding()
 //            }
+            
+//            HStack {
+//                Text("Find a Ball")
+//                    .font(.system(size: 32, weight : .heavy))
+//                    .padding()
+//                Spacer()
+//
+//                Button(action: {
+//                    showingSearch.toggle()
+//                }, label : {
+//                    Image(systemName: "magnifyingglass")
+//                        .resizable()
+//                        .frame(width : 25, height: 25)
+//                })
+//                .sheet(isPresented: $showingSearch) {
+//                    SearchBallView()
+//                }.padding()
+//            }
 //
             NavigationView {
 
@@ -62,6 +80,8 @@ struct FindABallView: View {
                                 showingSearch.toggle()
                             }, label : {
                                 Image(systemName: "magnifyingglass")
+                                    .imageScale(.large)
+//                                    .frame(width : 25, height: 25)
                             })
                             .sheet(isPresented: $showingSearch) {
                                 SearchBallView()
@@ -70,7 +90,9 @@ struct FindABallView: View {
                         }
                     }
                 }
+                
             }
+        
         }
 
     }

@@ -138,6 +138,8 @@ struct AnalyzeScoresView: View {
                             showingSearch.toggle()
                         }, label : {
                             Image(systemName: "magnifyingglass")
+                                .imageScale(.large)
+//                                .frame(width : 25, height: 25)
                         })
                         .sheet(isPresented: $showingSearch) {
                             SearchScoreView()
